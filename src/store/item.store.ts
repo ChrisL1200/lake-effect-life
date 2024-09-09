@@ -1,4 +1,3 @@
-// src/store/itemsSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export enum Color {
@@ -65,6 +64,6 @@ const itemsSlice = createSlice({
     },
 });
 
-export const { addPageOfItems } = itemsSlice.actions;
+export const { addPageOfItems,  } = itemsSlice.actions;
 
 export default itemsSlice.reducer;

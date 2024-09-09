@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import Home from './components/home/home.tsx';
 import Search from './components/search/search.tsx';
 import Item from './components/item/item.tsx';
-import { store } from './store/store';
+import { store } from './store';
 
 const App: React.FC = () => {
     return (
