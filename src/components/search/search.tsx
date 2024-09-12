@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Item, addPageOfItems } from "../../store/item.store.ts";
+import { Item, addItems } from "../../store/item.store.ts";
 import { RootState } from '../../store';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -19,20 +19,18 @@ interface Props {
 }
 
 interface State {
-    currentPage: number;
     mobileFilterOpen: boolean;
 }
 
 const Search: React.FC<Props> = () => {
     const dispatch = useDispatch();
     const [state, setState] = useState<State>({
-        currentPage: 1,
         mobileFilterOpen: false
     });
 
     const loadPage = async () => {
         const items: Item[] = await api.item.getItems();
-        dispatch(addPageOfItems({ [state.currentPage]: items }));
+        dispatch(addItems(items));
     }
 
     const toggleMobileDrawer = () => {
@@ -47,12 +45,12 @@ const Search: React.FC<Props> = () => {
     }, []);
 
     const items = useSelector((reduxState: RootState) => {
-        return (reduxState.items.paginatedItems[state.currentPage] ?? []).map((itemId: string) => reduxState.items.itemMap[itemId]);
+        return (reduxState.items.filteredItems ?? []).map((itemId: string) => reduxState.items.itemMap[itemId]);
     });
 
     return (
         <div>
-            <Button onClick={toggleMobileDrawer}>Open Drawer</Button>
+            <Button onClick={toggleMobileDrawer}>Filter</Button>
             <Drawer open={state.mobileFilterOpen} onClose={toggleMobileDrawer} className="p-4">
                 <SearchFilters></SearchFilters>
             </Drawer>

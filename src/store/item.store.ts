@@ -46,7 +46,7 @@ export interface ItemFilter {
 interface ItemsState {
     filters: ItemFilter[];
     itemMap: Record<string, Item>;
-    paginatedItems: Record<number, string[]>;
+    filteredItems: string[];
 }
 
 const initialState: ItemsState = {
@@ -63,30 +63,44 @@ const initialState: ItemsState = {
         }
     ],
     itemMap: {},
-    paginatedItems: {},
+    filteredItems: [],
 };
 
 const itemsSlice = createSlice({
     name: 'items',
     initialState,
     reducers: {
-        addPageOfItems: (state, action: PayloadAction<Record<number, Item[]>>) => {
-            const payloadKeys = Object.keys(action.payload);
-            if (payloadKeys.length === 1) {
-                const page: number = parseInt(payloadKeys[0]);
-                const items: Item[] = action.payload[page];
-                items.forEach((item: Item) => {
-                    state.itemMap[item.id] = item;
-                });
-                state.paginatedItems[page] = items.map((item: Item) => item.id);
-            }
+        addItems: (state, action: PayloadAction<Item[]>) => {
+            const items: Item[] = action.payload;
+            items.forEach((item: Item) => {
+                state.itemMap[item.id] = item;
+            });
+            state.filteredItems = items.map((item: Item) => item.id);
         },
         updateFilters(state, action: PayloadAction<ItemFilter[]>) {
             state.filters = action.payload;
+            state.filteredItems = Object.values(state.itemMap).filter((item: Item) => {
+                let unfiltered = true;
+                state.filters.forEach((filter: ItemFilter) => {
+                    switch (filter.key) {
+                        case ItemFilterKey.Color:
+                            if (filter.selectedValues.length > 0 && !filter.selectedValues.some((selectedValue: string) => item.colors.includes(selectedValue as Color))) {
+                                unfiltered = false;
+                            }
+                            break;
+                        case ItemFilterKey.Type:
+                            if (filter.selectedValues.length > 0 && !filter.selectedValues.includes(item.type)) {
+                                unfiltered = false;
+                            }
+                            break;
+                    }
+                });
+                return unfiltered;
+            }).map((item: Item) => item.id);
         }
     },
 });
 
-export const { addPageOfItems, updateFilters } = itemsSlice.actions;
+export const { addItems, updateFilters } = itemsSlice.actions;
 
 export default itemsSlice.reducer;

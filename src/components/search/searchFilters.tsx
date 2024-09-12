@@ -47,7 +47,6 @@ const SearchFilters: React.FC<Props> = () => {
     const handleOpen = (key: ItemFilterKey) => {
         const updatedAccordionExpandMap = { ...state.accordionExpandMap };
         updatedAccordionExpandMap[key] = !state.accordionExpandMap[key];
-        console.log(updatedAccordionExpandMap)
         setState({
             ...state,
             accordionExpandMap: updatedAccordionExpandMap
@@ -68,8 +67,6 @@ const SearchFilters: React.FC<Props> = () => {
         });
         dispatch(updateFilters(updatedFilters));
     }
-
-    console.log(filters);
 
     return (
         <>
