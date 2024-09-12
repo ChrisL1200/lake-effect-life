@@ -1,0 +1,352 @@
+[
+  {
+    "id": "Purple-Hoodie-0",
+    "name": "Purple Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Purple" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Red-Long-Sleeve-1",
+    "name": "Red Long Sleeve",
+    "type": "Long Sleeve",
+    "colors": [ "Red" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Yellow-Long-Sleeve-2",
+    "name": "Yellow Long Sleeve",
+    "type": "Long Sleeve",
+    "colors": [ "Yellow" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Green-T-Shirt-3",
+    "name": "Green T-Shirt",
+    "type": "T-Shirt",
+    "colors": [ "Green" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Green-Sweatshirt-4",
+    "name": "Green Sweatshirt",
+    "type": "Sweatshirt",
+    "colors": [ "Green" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Yellow-Hoodie-5",
+    "name": "Yellow Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Yellow" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Blue-Hoodie-6",
+    "name": "Blue Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Blue" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Yellow-Jacket-7",
+    "name": "Yellow Jacket",
+    "type": "Jacket",
+    "colors": [ "Yellow" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Orange-Jacket-8",
+    "name": "Orange Jacket",
+    "type": "Jacket",
+    "colors": [ "Orange" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Green-T-Shirt-9",
+    "name": "Green T-Shirt",
+    "type": "T-Shirt",
+    "colors": [ "Green" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Blue-Hoodie-10",
+    "name": "Blue Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Blue" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Yellow-Hoodie-11",
+    "name": "Yellow Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Yellow" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Red-Tank-Top-12",
+    "name": "Red Tank Top",
+    "type": "Tank Top",
+    "colors": [ "Red" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Purple-Tank-Top-13",
+    "name": "Purple Tank Top",
+    "type": "Tank Top",
+    "colors": [ "Purple" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Blue-Hoodie-14",
+    "name": "Blue Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Blue" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Blue-Long-Sleeve-15",
+    "name": "Blue Long Sleeve",
+    "type": "Long Sleeve",
+    "colors": [ "Blue" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Purple-Tank-Top-16",
+    "name": "Purple Tank Top",
+    "type": "Tank Top",
+    "colors": [ "Purple" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Purple-T-Shirt-17",
+    "name": "Purple T-Shirt",
+    "type": "T-Shirt",
+    "colors": [ "Purple" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Green-T-Shirt-18",
+    "name": "Green T-Shirt",
+    "type": "T-Shirt",
+    "colors": [ "Green" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Green-Sweatshirt-19",
+    "name": "Green Sweatshirt",
+    "type": "Sweatshirt",
+    "colors": [ "Green" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Red-Long-Sleeve-20",
+    "name": "Red Long Sleeve",
+    "type": "Long Sleeve",
+    "colors": [ "Red" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Yellow-Tank-Top-21",
+    "name": "Yellow Tank Top",
+    "type": "Tank Top",
+    "colors": [ "Yellow" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Green-Hoodie-22",
+    "name": "Green Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Green" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Purple-Hoodie-23",
+    "name": "Purple Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Purple" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Purple-Tank-Top-24",
+    "name": "Purple Tank Top",
+    "type": "Tank Top",
+    "colors": [ "Purple" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Orange-T-Shirt-25",
+    "name": "Orange T-Shirt",
+    "type": "T-Shirt",
+    "colors": [ "Orange" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Blue-T-Shirt-26",
+    "name": "Blue T-Shirt",
+    "type": "T-Shirt",
+    "colors": [ "Blue" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Orange-Hoodie-27",
+    "name": "Orange Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Orange" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Green-Jacket-28",
+    "name": "Green Jacket",
+    "type": "Jacket",
+    "colors": [ "Green" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Orange-Long-Sleeve-29",
+    "name": "Orange Long Sleeve",
+    "type": "Long Sleeve",
+    "colors": [ "Orange" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Orange-Tank-Top-30",
+    "name": "Orange Tank Top",
+    "type": "Tank Top",
+    "colors": [ "Orange" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Red-Tank-Top-31",
+    "name": "Red Tank Top",
+    "type": "Tank Top",
+    "colors": [ "Red" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Green-Long-Sleeve-32",
+    "name": "Green Long Sleeve",
+    "type": "Long Sleeve",
+    "colors": [ "Green" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Yellow-T-Shirt-33",
+    "name": "Yellow T-Shirt",
+    "type": "T-Shirt",
+    "colors": [ "Yellow" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Orange-Sweatshirt-34",
+    "name": "Orange Sweatshirt",
+    "type": "Sweatshirt",
+    "colors": [ "Orange" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Yellow-Tank-Top-35",
+    "name": "Yellow Tank Top",
+    "type": "Tank Top",
+    "colors": [ "Yellow" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Purple-T-Shirt-36",
+    "name": "Purple T-Shirt",
+    "type": "T-Shirt",
+    "colors": [ "Purple" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Orange-Jacket-37",
+    "name": "Orange Jacket",
+    "type": "Jacket",
+    "colors": [ "Orange" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Purple-Tank-Top-38",
+    "name": "Purple Tank Top",
+    "type": "Tank Top",
+    "colors": [ "Purple" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Purple-Hoodie-39",
+    "name": "Purple Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Purple" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Yellow-Hoodie-40",
+    "name": "Yellow Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Yellow" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Blue-T-Shirt-41",
+    "name": "Blue T-Shirt",
+    "type": "T-Shirt",
+    "colors": [ "Blue" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Yellow-T-Shirt-42",
+    "name": "Yellow T-Shirt",
+    "type": "T-Shirt",
+    "colors": [ "Yellow" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Yellow-Sweatshirt-43",
+    "name": "Yellow Sweatshirt",
+    "type": "Sweatshirt",
+    "colors": [ "Yellow" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Orange-Long-Sleeve-44",
+    "name": "Orange Long Sleeve",
+    "type": "Long Sleeve",
+    "colors": [ "Orange" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Orange-Hoodie-45",
+    "name": "Orange Hoodie",
+    "type": "Hoodie",
+    "colors": [ "Orange" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Green-Long-Sleeve-46",
+    "name": "Green Long Sleeve",
+    "type": "Long Sleeve",
+    "colors": [ "Green" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Yellow-Long-Sleeve-47",
+    "name": "Yellow Long Sleeve",
+    "type": "Long Sleeve",
+    "colors": [ "Yellow" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Blue-Long-Sleeve-48",
+    "name": "Blue Long Sleeve",
+    "type": "Long Sleeve",
+    "colors": [ "Blue" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  },
+  {
+    "id": "Red-Sweatshirt-49",
+    "name": "Red Sweatshirt",
+    "type": "Sweatshirt",
+    "colors": [ "Red" ],
+    "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ]
+  }
+]
