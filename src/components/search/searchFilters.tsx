@@ -72,14 +72,14 @@ const SearchFilters: React.FC<Props> = () => {
         <>
             {filters.map(filter => (
                 <Accordion key={filter.key} open={state.accordionExpandMap[filter.key]} icon={<Icon open={state.accordionExpandMap[filter.key]} />}>
-                    <AccordionHeader onClick={() => handleOpen(filter.key)}>{filter.key}</AccordionHeader>
-                    <AccordionBody>
+                    <AccordionHeader className="p-2" onClick={() => handleOpen(filter.key)}>{filter.key}</AccordionHeader>
+                    <AccordionBody className="p-0">
                         <List>
                             {filter.options.map(option => (
                                 <ListItem key={option} className="p-0">
                                     <label
                                         htmlFor="vertical-list-react"
-                                        className="flex w-full cursor-pointer items-center px-3 py-2"
+                                        className="flex w-full cursor-pointer items-center"
                                     >
                                         <ListItemPrefix className="mr-3">
                                             <Checkbox

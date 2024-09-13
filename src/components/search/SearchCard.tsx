@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-import { Color, Item } from "../../store/item.store.ts";
 import {
     Card,
     CardHeader,
     CardBody,
-    CardFooter,
     Typography,
-    Button,
 } from "@material-tailwind/react";
+import ItemColor from '../../models/itemColor.model';
+import Item from '../../models/item.model';
 
 interface Props {
     item: Item;
 }
 
 interface State {
-    selectedColor: Color;
+    selectedColor: ItemColor;
 }
 
 const SearchCard: React.FC<Props> = (props: Props) => {
@@ -23,7 +22,11 @@ const SearchCard: React.FC<Props> = (props: Props) => {
         selectedColor: item.colors[0]
     });
 
-    const selectColor = (selectedColor: Color) => {
+    const getPrice = () => {
+        return Object.values(state.selectedColor.sizeToPriceMap)[0];
+    }
+
+    const selectColor = (selectedColor: ItemColor) => {
         setState({
             ...state,
             selectedColor
@@ -31,10 +34,10 @@ const SearchCard: React.FC<Props> = (props: Props) => {
     }
 
     return (
-        <Card key={item.id} className="mt-6 w-96">
+        <Card className="mt-6 w-96">
             <CardHeader color="blue-gray" className="relative h-56">
                 <img
-                    src={`/images/items/${item.imgUrls[0]}`}
+                    src={`/images/items/${state.selectedColor.imgUrls[0]}`}
                     alt="card-image"
                 />
             </CardHeader>
@@ -42,11 +45,11 @@ const SearchCard: React.FC<Props> = (props: Props) => {
                 <div className="flex space-x-4 mb-4">
                     {item.colors.map((color) => (
                         <div
-                            key={color}
+                            key={color.color}
                             onClick={() => selectColor(color)}
-                            className={`h-6 w-6 rounded-full cursor-pointer border-1 ${state.selectedColor === color ? 'border-black' : 'border-transparent'
+                            className={`h-6 w-6 rounded-full cursor-pointer border-1 ${state.selectedColor.color === color.color ? 'border-black' : 'border-transparent'
                                 }`}
-                            style={{ backgroundColor: color.toLowerCase() }}
+                            style={{ backgroundColor: color.color.toLowerCase() }}
                         >
                             {/* Add a check mark if the color is selected */}
                             {state.selectedColor === color && (
@@ -61,13 +64,10 @@ const SearchCard: React.FC<Props> = (props: Props) => {
                     {item.name}
                 </Typography>
                 <Typography>
-                    {item.color}
+                    {state.selectedColor.color}
                 </Typography>
-                <p>${item.price}</p>
+                <p>${getPrice()}</p>
             </CardBody>
-            <CardFooter className="pt-0">
-                <Button>{item.id}</Button>
-            </CardFooter>
         </Card>
     );
 };

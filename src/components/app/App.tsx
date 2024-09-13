@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Home from '../home/Home.tsx';
 import Search from '../search/Search.tsx';
-import Item from '../item/Item.tsx';
+import View from '../view/View.tsx';
 import Header from './Header.tsx';
 import { store } from '../../store';
 
@@ -16,7 +16,7 @@ const App: React.FC = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/search" element={<Search />} />
-                    <Route path="/item/:id" element={<Item />} />
+                    <Route path="/item/:id" element={<View />} />
                 </Routes>
             </Router>
         </Provider>

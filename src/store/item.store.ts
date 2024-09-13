@@ -1,38 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import Item, { ItemType } from '../models/item.model';
+import ItemColor, { Color } from '../models/itemColor.model';
 
-export enum Color {
-    BLUE = "Blue",
-    RED = "Red",
-    ORANGE = "Orange",
-    YELLOW = "Yellow",
-    GREEN = "Green",
-    PURPLE = "Purple"
-}
-export enum ItemType {
-    TSHIRT = "T-Shirt",
-    LONGSLEEVE = "Long Sleeve",
-    HOODIE = "Hoodie",
-    JACKET = "Jacket",
-    SWEATSHIRT = "Sweatshirt",
-    TANKTOP = "Tank Top"
-}
-export enum ItemSize {
-    SMALL = "Small",
-    MEDIUM = "Medium",
-    LARGE = "Large",
-    XLARGE = "XL",
-    XXLARGE = "XXL"
-}
-
-export interface Item {
-    id: string;
-    name: string;
-    price: number;
-    colors: Color[];
-    type: ItemType;
-    size?: ItemSize;
-    imgUrls: string[];
-}
 export enum ItemFilterKey {
     Color = "Color",
     Type = "Type",
@@ -47,7 +16,7 @@ export interface ItemFilter {
 interface ItemsState {
     filters: ItemFilter[];
     itemMap: Record<string, Item>;
-    filteredItems: string[];
+    filteredItems: Item[];
 }
 
 const initialState: ItemsState = {
@@ -76,28 +45,42 @@ const itemsSlice = createSlice({
             items.forEach((item: Item) => {
                 state.itemMap[item.id] = item;
             });
-            state.filteredItems = items.map((item: Item) => item.id);
+            state.filteredItems = items;
         },
         updateFilters(state, action: PayloadAction<ItemFilter[]>) {
             state.filters = action.payload;
-            state.filteredItems = Object.values(state.itemMap).filter((item: Item) => {
-                let unfiltered = true;
+            state.filteredItems = Object.values(state.itemMap).map((item: Item) => JSON.parse(JSON.stringify(item))).filter((item: Item) => {
+                let unfilteredItem = true;
+                item.colors = item.colors.filter((itemColor: ItemColor) => {
+                    let unfilteredColor = true;
+                    state.filters.forEach((filter: ItemFilter) => {
+                        switch (filter.key) {
+                            case ItemFilterKey.Color:
+                                if (filter.selectedValues.length > 0 && !filter.selectedValues.includes(itemColor.color)) {
+                                    unfilteredColor = false;
+                                }
+                                break;
+                        }
+                    });
+                    return unfilteredColor;
+                });
+
                 state.filters.forEach((filter: ItemFilter) => {
                     switch (filter.key) {
-                        case ItemFilterKey.Color:
-                            if (filter.selectedValues.length > 0 && !filter.selectedValues.some((selectedValue: string) => item.colors.includes(selectedValue as Color))) {
-                                unfiltered = false;
-                            }
-                            break;
                         case ItemFilterKey.Type:
                             if (filter.selectedValues.length > 0 && !filter.selectedValues.includes(item.type)) {
-                                unfiltered = false;
+                                unfilteredItem = false;
                             }
                             break;
                     }
                 });
-                return unfiltered;
-            }).map((item: Item) => item.id);
+
+                if (item.colors.length === 0) {
+                    unfilteredItem = false;
+                }
+
+                return unfilteredItem;
+            });
         }
     },
 });

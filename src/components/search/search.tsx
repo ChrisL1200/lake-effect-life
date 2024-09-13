@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Item, addItems } from "../../store/item.store.ts";
+﻿import React, { useEffect, useState } from 'react';
+import {  addItems } from "../../store/item.store.ts";
 import { RootState } from '../../store';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -7,7 +7,7 @@ import {
 	Button,
 } from "@material-tailwind/react";
 import api from "../../api";
-import SearchFilters from './searchFilters.tsx';
+import SearchFilters from './SearchFilters.tsx';
 import SearchCard from './SearchCard.tsx';
 
 interface Props {}
@@ -39,12 +39,12 @@ const Search: React.FC<Props> = () => {
     }, []);
 
     const filteredItems = useSelector((reduxState: RootState) => {
-        return (reduxState.items.filteredItems ?? []).map((itemId: string) => reduxState.items.itemMap[itemId]);
+        return (reduxState.items.filteredItems ?? []);
     });
 
     return (
         <div>
-            <div className="flex justify-center p-4">
+            <div className="p-4 flex justify-center">
                 <Button onClick={toggleMobileDrawer}>Filter & Sort</Button>
             </div>
             <Drawer open={state.mobileFilterOpen} onClose={toggleMobileDrawer} className="p-4">

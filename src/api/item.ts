@@ -1,4 +1,5 @@
-import { Color, ItemType, Item } from "../store/item.store.ts";
+import Item, { ItemType } from "../models/item.model";
+import { Color, ItemSize } from "../models/itemColor.model";
 import items from "./itemList.json";
 
 const colorList: Color[] = [
@@ -25,22 +26,32 @@ const getRandomValue = (list: any[]): any => {
     return list[randomIndex]; 
 }
 
+const getPrice = () => Math.floor(Math.random() * 50) + 20;
+
 const itemGenerator = (index: number): Item => {
-    const colors = colorList;
+    const colors = colorList.map((color: Color) => ({
+        color,
+        imgUrls: ['great-lakes-mens-t-shirt.jpg'],
+        sizeToPriceMap: {
+            [ItemSize.LARGE]: getPrice(),
+            [ItemSize.MEDIUM]: getPrice(),
+            [ItemSize.SMALL]: getPrice(),
+            [ItemSize.XLARGE]: getPrice(),
+            [ItemSize.XXLARGE]: getPrice(),
+        }
+    }));
     const type = getRandomValue(typeList);
     const name = `${type} ${index}`;
     const id = `${name.split(' ').join('-')}-${index}`;
-    const imgUrls = ['great-lakes-mens-t-shirt.jpg'];
-    const price = Math.floor(Math.random() * 50) + 20;
 
-    return { id, name, type, colors, imgUrls, price };
+    return { id, name, type, colors };
 };
 
 const ITEMS_LENGTH = 50;
 
 const getItems = async () => {
-    const mockItems: Item[] = [...Array(ITEMS_LENGTH)].map((_, index: number) => itemGenerator(index));
-    // console.log(JSON.stringify(mockItems));
+    // const mockItems: Item[] = [...Array(ITEMS_LENGTH)].map((_, index: number) => itemGenerator(index));
+    //console.log(JSON.stringify(mockItems));
     await new Promise((resolve) => setTimeout(resolve, 500));
     return items; 
 };
