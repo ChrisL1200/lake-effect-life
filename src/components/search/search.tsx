@@ -9,6 +9,7 @@ import {
 import api from "../../api";
 import SearchFilters from './SearchFilters.tsx';
 import SearchCard from './SearchCard.tsx';
+import SearchBar from '../common/SearchBar.tsx';
 
 interface Props {}
 
@@ -44,8 +45,13 @@ const Search: React.FC<Props> = () => {
 
     return (
         <div>
-            <div className="p-4 flex justify-center">
-                <Button onClick={toggleMobileDrawer}>Filter & Sort</Button>
+            <div className="flex p-3">
+                <span className="pr-2">
+                    <SearchBar></SearchBar>
+                </span>
+                <span>
+                    <Button onClick={toggleMobileDrawer}>Filter & Sort</Button>
+                </span>
             </div>
             <Drawer open={state.mobileFilterOpen} onClose={toggleMobileDrawer} className="p-4">
                 <SearchFilters></SearchFilters>

@@ -63,9 +63,6 @@ const SearchCard: React.FC<Props> = (props: Props) => {
                 <Typography variant="h5" color="blue-gray" className="mb-2">
                     {item.name}
                 </Typography>
-                <Typography>
-                    {state.selectedColor.color}
-                </Typography>
                 <p>${getPrice()}</p>
             </CardBody>
         </Card>
