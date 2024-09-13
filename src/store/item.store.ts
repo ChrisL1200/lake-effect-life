@@ -27,6 +27,7 @@ export enum ItemSize {
 export interface Item {
     id: string;
     name: string;
+    price: number;
     colors: Color[];
     type: ItemType;
     size?: ItemSize;

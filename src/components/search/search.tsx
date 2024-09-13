@@ -4,19 +4,13 @@ import { RootState } from '../../store';
 import { useSelector, useDispatch } from 'react-redux';
 import {
     Drawer,
-	Card,
-	CardHeader,
-	CardBody,
-	CardFooter,
-	Typography,
 	Button,
 } from "@material-tailwind/react";
 import api from "../../api";
 import SearchFilters from './searchFilters.tsx';
+import SearchCard from './SearchCard.tsx';
 
-interface Props {
-	items?: Item[];
-}
+interface Props {}
 
 interface State {
     mobileFilterOpen: boolean;
@@ -44,36 +38,20 @@ const Search: React.FC<Props> = () => {
         loadPage();
     }, []);
 
-    const items = useSelector((reduxState: RootState) => {
+    const filteredItems = useSelector((reduxState: RootState) => {
         return (reduxState.items.filteredItems ?? []).map((itemId: string) => reduxState.items.itemMap[itemId]);
     });
 
     return (
         <div>
-            <Button onClick={toggleMobileDrawer}>Filter</Button>
+            <div className="flex justify-center p-4">
+                <Button onClick={toggleMobileDrawer}>Filter & Sort</Button>
+            </div>
             <Drawer open={state.mobileFilterOpen} onClose={toggleMobileDrawer} className="p-4">
                 <SearchFilters></SearchFilters>
             </Drawer>
-            {items.map(item => (
-                <Card key={item.id} className="mt-6 w-96">
-                    <CardHeader color="blue-gray" className="relative h-56">
-                        <img
-                            src={`/images/items/${item.imgUrls[0]}`}
-                            alt="card-image"
-                        />
-                    </CardHeader>
-                    <CardBody>
-                        <Typography variant="h5" color="blue-gray" className="mb-2">
-                            { item.name }
-                        </Typography>
-                        <Typography>
-                            { item.color }
-                        </Typography>
-                    </CardBody>
-                    <CardFooter className="pt-0">
-                        <Button>{item.id}</Button>
-                    </CardFooter>
-                </Card>
+            {filteredItems.map(filteredItem => (
+                <SearchCard key={filteredItem.id} item={filteredItem}></SearchCard>
             ))}
         </div>
     );
