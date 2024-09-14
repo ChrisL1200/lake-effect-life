@@ -1,12 +1,10 @@
-﻿import React, { useEffect, useState } from 'react';
-import {  addItems } from "../../store/item.store.ts";
+﻿import React, { useState } from 'react';
 import { RootState } from '../../store';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
     Drawer,
 	Button,
 } from "@material-tailwind/react";
-import api from "../../api";
 import SearchFilters from './SearchFilters.tsx';
 import SearchCard from './SearchCard.tsx';
 import SearchBar from '../common/SearchBar.tsx';
@@ -18,15 +16,9 @@ interface State {
 }
 
 const Search: React.FC<Props> = () => {
-    const dispatch = useDispatch();
     const [state, setState] = useState<State>({
         mobileFilterOpen: false
     });
-
-    const loadPage = async () => {
-        const items: Item[] = await api.item.getItems();
-        dispatch(addItems(items));
-    }
 
     const toggleMobileDrawer = () => {
         setState({
@@ -34,10 +26,6 @@ const Search: React.FC<Props> = () => {
             mobileFilterOpen: !state.mobileFilterOpen
         })
     }
-
-    useEffect(() => {
-        loadPage();
-    }, []);
 
     const filteredItems = useSelector((reduxState: RootState) => {
         return (reduxState.items.filteredItems ?? []);

@@ -90,6 +90,7 @@ const itemsSlice = createSlice({
             });
 
             state.filteredItems = items;
+            console.log('addItems', state);
         },
         updateFilters(state, action: PayloadAction<{ filters?: ItemFilter[], searchOption?: SearchOption }>) {
             const { filters, searchOption } = action.payload;

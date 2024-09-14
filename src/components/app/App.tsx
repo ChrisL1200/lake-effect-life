@@ -1,16 +1,28 @@
 // src/App.tsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Home from '../home/Home.tsx';
 import Search from '../search/Search.tsx';
 import View from '../view/View.tsx';
 import Header from './Header.tsx';
-import { store } from '../../store';
+import { addItems } from '../../store/item.store.ts';
+import api from '../../api/index.ts';
+import Item from '../../models/item.model.ts';
 
 const App: React.FC = () => {
+    const dispatch = useDispatch();
+    const loadData = async () => {
+        const items: Item[] = await api.item.getItems();
+        dispatch(addItems(items));
+    }
+
+    useEffect(() => {
+        loadData();
+    }, []);
+
     return (
-        <Provider store={store}>
+        <>
             <Header></Header>
             <Router>
                 <Routes>
@@ -19,7 +31,7 @@ const App: React.FC = () => {
                     <Route path="/item/:id" element={<View />} />
                 </Routes>
             </Router>
-        </Provider>
+        </>
     );
 };
 
