@@ -1,36 +1,42 @@
 import React, { useState } from 'react';
 import { Input, List, ListItem } from '@material-tailwind/react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import { SearchOption, SearchOptionKey, updateFilters } from '../../store/item.store';
 
-interface SearchProps {
-    options?: string[];
-    onSelect: (value: string) => void;
-}
+interface SearchProps {}
 
-const SearchBar: React.FC<SearchProps> = ({ options = [], onSelect }) => {
+const SearchBar: React.FC<SearchProps> = () => {
+    const dispatch = useDispatch();
     const [searchTerm, setSearchTerm] = useState('');
-    const [filteredOptions, setFilteredOptions] = useState<string[]>([]);
+    const [filteredOptions, setFilteredOptions] = useState<SearchOption[]>([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         setSearchTerm(value);
-
         if (value.length > 0) {
             const filtered = options.filter(option =>
-                option.toLowerCase().includes(value.toLowerCase())
+                option.value.toLowerCase().includes(value.toLowerCase())
             );
-            setFilteredOptions(filtered);
+
+            setFilteredOptions(filtered.slice(0, 5));
             setShowSuggestions(true);
         } else {
+            dispatch(updateFilters({ searchOption: { key: SearchOptionKey.Text, value: "" } }));
             setShowSuggestions(false);
         }
     };
 
-    const handleSelect = (value: string) => {
-        setSearchTerm(value);
+    const handleSelect = (searchOption: SearchOption) => {
+        setSearchTerm(searchOption.value);
         setShowSuggestions(false);
-        onSelect(value);
+        dispatch(updateFilters({ searchOption }));
     };
+
+    const options = useSelector((reduxState: RootState) => {
+        return (reduxState.items.searchOptions);
+    });
 
     return (
         <div className="relative">
@@ -42,14 +48,14 @@ const SearchBar: React.FC<SearchProps> = ({ options = [], onSelect }) => {
                 className="w-full"
             />
             {showSuggestions && filteredOptions.length > 0 && (
-                <List className="absolute top-full mt-1 bg-white w-full shadow-lg rounded-lg">
-                    {filteredOptions.map((option, index) => (
+                <List className="absolute top-full left-0 mt-1 bg-white w-full shadow-lg rounded-lg z-10">
+                    {filteredOptions.map((option) => (
                         <ListItem
-                            key={index}
+                            key={option.value}
                             onClick={() => handleSelect(option)}
                             className="cursor-pointer hover:bg-gray-200"
                         >
-                            {option}
+                            {option.value}
                         </ListItem>
                     ))}
                 </List>

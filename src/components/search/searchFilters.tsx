@@ -65,7 +65,7 @@ const SearchFilters: React.FC<Props> = () => {
                 }
             }
         });
-        dispatch(updateFilters(updatedFilters));
+        dispatch(updateFilters({ filters: updatedFilters }));
     }
 
     return (
