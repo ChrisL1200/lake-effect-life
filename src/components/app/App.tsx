@@ -9,6 +9,7 @@ import Header from './Header.tsx';
 import { addGroupedItems } from '../../store/item.store.ts';
 import api from '../../api/index.ts';
 import Cart from '../cart/Cart.tsx';
+import Checkout from '../checkout/Checkout.tsx';
 import GroupedItem from '../../models/groupedItem.model.ts';
 
 const App: React.FC = () => {
@@ -24,13 +25,14 @@ const App: React.FC = () => {
 
     return (
         <>
-            <Header></Header>
             <Router>
+                <Header></Header>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/search" element={<Search />} />
                     <Route path="/item/:id" element={<View />} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route path="/checkout" element={<Checkout />} />
                 </Routes>
             </Router>
         </>

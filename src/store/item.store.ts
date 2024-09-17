@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import ItemColor, { Color } from '../models/itemColor.model';
 import GroupedItem, { ItemType } from '../models/groupedItem.model';
+import Item from '../models/item.model';
 
 export enum ItemFilterKey {
     Color = "Color",
@@ -31,6 +32,7 @@ interface ItemsState {
     filteredItems: GroupedItem[];
     searchOptions: SearchOption[];
     selectedSearchOption: SearchOption;
+    itemMap: Record<string, Item>;
 }
 
 const initialState: ItemsState = {
@@ -52,7 +54,8 @@ const initialState: ItemsState = {
     selectedSearchOption: {
         key: SearchOptionKey.Text,
         value: ""
-    }
+    },
+    itemMap: {}
 };
 
 const containsCaseInsensitive = (searchTerm: string, str: string): boolean => {
@@ -71,16 +74,22 @@ const itemsSlice = createSlice({
                 [SearchOptionKey.Type]: []
             };
 
-            groupedItems.forEach((item: GroupedItem) => {
-                state.groupedItemMap[item.id] = item;
+            groupedItems.forEach((groupedItem: GroupedItem) => {
+                state.groupedItemMap[groupedItem.id] = groupedItem;
 
-                if (!searchOptionsMap[SearchOptionKey.Name].includes(item.id)) {
-                    searchOptionsMap[SearchOptionKey.Name].push(item.id);
+                if (!searchOptionsMap[SearchOptionKey.Name].includes(groupedItem.id)) {
+                    searchOptionsMap[SearchOptionKey.Name].push(groupedItem.id);
                 }
 
-                if (!searchOptionsMap[SearchOptionKey.Type].includes(item.type)) {
-                    searchOptionsMap[SearchOptionKey.Type].push(item.type);
+                if (!searchOptionsMap[SearchOptionKey.Type].includes(groupedItem.type)) {
+                    searchOptionsMap[SearchOptionKey.Type].push(groupedItem.type);
                 }
+
+                groupedItem.colors.forEach((itemColor: ItemColor) => {
+                    itemColor.items.forEach((item: Item) => {
+                        state.itemMap[item.id] = item;
+                    })
+                });
             });
 
             Object.entries(searchOptionsMap).forEach(([key, values]) => {

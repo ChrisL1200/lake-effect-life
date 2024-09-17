@@ -1,17 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import Item from '../models/item.model';
-
-export interface CartItem {
-    item: Item;
-    quantity: number;
-}
+import CartItem from '../models/cartItem.model';
 
 interface CartState {
-    cart: CartItem[];
+    cartItems: CartItem[];
 }
 
 const initialState: CartState = {
-    cart: [],
+    cartItems: [],
 };
 
 const cartSlice = createSlice({
@@ -19,19 +14,19 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         clearCart: (state) => {
-            state.cart = [];
+            state.cartItems = [];
         },
         deleteItemFromCart: (state, action: PayloadAction<string>) => {
-            state.cart = state.cart.filter((cartItem: CartItem) => cartItem.item.id === action.payload);
+            state.cartItems = state.cartItems.filter((cartItem: CartItem) => cartItem.itemId !== action.payload);
         },
         upsertItemFromCart(state, action: PayloadAction<CartItem>) {
             const upsertedCartItem = action.payload;
-            const index = state.cart.findIndex((cartItem: CartItem) => cartItem.item.id === upsertedCartItem.item.id);
+            const index = state.cartItems.findIndex((cartItem: CartItem) => cartItem.itemId === upsertedCartItem.itemId);
 
             if (index !== -1) {
-                state.cart.splice(index, 1, upsertedCartItem);
+                state.cartItems.splice(index, 1, upsertedCartItem);
             } else {
-                state.cart.push(upsertedCartItem);
+                state.cartItems.push(upsertedCartItem);
             }
         }
     },

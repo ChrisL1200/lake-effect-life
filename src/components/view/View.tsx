@@ -1,15 +1,18 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button, Carousel } from '@material-tailwind/react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import ColorSelector from '../common/ColorSelector';
 import GroupedItem from '../../models/groupedItem.model';
 import ItemColor from '../../models/itemColor.model';
 import Item from '../../models/item.model';
+import { upsertItemFromCart } from '../../store/cart.store';
+import CartItem from '../../models/cartItem.model';
 
 const View: React.FC = () => {
     const { id } = useParams<{ id: string }>();
+    const dispatch = useDispatch();
 
     const groupedItem: GroupedItem = useSelector((reduxState: RootState) => {
         return reduxState.items.groupedItemMap[id!] ?? {};
@@ -34,7 +37,14 @@ const View: React.FC = () => {
             return;
         }
         // Handle add to cart logic here
-        console.log(`Added to cart: Item ID: ${groupedItem!.id}, Color: ${selectedColor}, Size: ${selectedItem.size}`);
+        console.log(`Added to cart: Item ID: ${groupedItem!.id}, Color: ${selectedColor.color}, Size: ${selectedItem.size}`);
+        const cartItem: CartItem = {
+            itemId: selectedItem.id,
+            itemColorId: selectedColor.id,
+            groupedItemId: groupedItem.id,
+            quantity: 1
+        };
+        dispatch(upsertItemFromCart(cartItem));
     };
 
     const setColor = (itemColor: ItemColor) => {
