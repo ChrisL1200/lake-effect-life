@@ -6,34 +6,40 @@ import {
     Typography,
 } from "@material-tailwind/react";
 import ItemColor from '../../models/itemColor.model';
-import Item from '../../models/item.model';
 import ColorSelector from '../common/ColorSelector';
+import { useNavigate } from 'react-router-dom';
+import GroupedItem from '../../models/groupedItem.model';
 
 interface Props {
-    item: Item;
-};
+    groupedItem: GroupedItem;
+}
 
 const SearchCard: React.FC<Props> = (props: Props) => {
-    const { item } = props;
+    const { groupedItem } = props;
+    const navigate = useNavigate();
 
-    const [selectedColor, setSelectedColor] = useState<ItemColor>(item.colors[0]);
+    const [selectedItemColor, setSelectedItemColor] = useState<ItemColor>(groupedItem.colors[0]);
 
     const getPrice = () => {
-        return Object.values(selectedColor.sizeToPriceMap)[0];
+        return selectedItemColor.items[0].price;
     }
+
+    const handleClick = () => {
+        navigate(`/item/${groupedItem.id}`);
+    };
 
     return (
         <Card className="mt-6 w-96">
-            <CardHeader color="blue-gray" className="relative h-56">
+            <CardHeader onClick={handleClick} color="blue-gray" className="relative h-56">
                 <img
-                    src={`/images/items/${selectedColor.imgUrls[0]}`}
+                    src={`/images/groupedItems/${selectedItemColor.imgUrls[0]}`}
                     alt="card-image"
                 />
             </CardHeader>
             <CardBody>
-                <ColorSelector colors={item.colors} selectedColor={selectedColor} setSelectedColor={setSelectedColor}></ColorSelector>
+                <ColorSelector colors={groupedItem.colors} selectedColor={selectedItemColor} setSelectedColor={setSelectedItemColor}></ColorSelector>
                 <Typography variant="h5" color="blue-gray" className="mb-2">
-                    {item.name}
+                    {groupedItem.id}
                 </Typography>
                 <p>${getPrice()}</p>
             </CardBody>

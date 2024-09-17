@@ -6,15 +6,16 @@ import Home from '../home/Home.tsx';
 import Search from '../search/Search.tsx';
 import View from '../view/View.tsx';
 import Header from './Header.tsx';
-import { addItems } from '../../store/item.store.ts';
+import { addGroupedItems } from '../../store/item.store.ts';
 import api from '../../api/index.ts';
-import Item from '../../models/item.model.ts';
+import Cart from '../cart/Cart.tsx';
+import GroupedItem from '../../models/groupedItem.model.ts';
 
 const App: React.FC = () => {
     const dispatch = useDispatch();
     const loadData = async () => {
-        const items: Item[] = await api.item.getItems();
-        dispatch(addItems(items));
+        const groupedItems: GroupedItem[] = await api.item.getGroupedItems();
+        dispatch(addGroupedItems(groupedItems));
     }
 
     useEffect(() => {
@@ -29,6 +30,7 @@ const App: React.FC = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/search" element={<Search />} />
                     <Route path="/item/:id" element={<View />} />
+                    <Route path="/cart" element={<Cart />} />
                 </Routes>
             </Router>
         </>

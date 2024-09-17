@@ -94,7 +94,7 @@ const SearchFilters: React.FC<Props> = () => {
                                             />
                                         </ListItemPrefix>
                                         <Typography color="blue-gray" className="font-medium">
-                                            {option }
+                                            {option}
                                         </Typography>
                                     </label>
                                 </ListItem>

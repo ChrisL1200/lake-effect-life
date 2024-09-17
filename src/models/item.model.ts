@@ -1,16 +1,15 @@
-import ItemColor from "./itemColor.model";
-
-export enum ItemType {
-    TSHIRT = "T-Shirt",
-    LONGSLEEVE = "Long Sleeve",
-    HOODIE = "Hoodie",
-    JACKET = "Jacket",
-    SWEATSHIRT = "Sweatshirt",
-    TANKTOP = "Tank Top"
+export enum ItemSize {
+    SMALL = "S",
+    MEDIUM = "M",
+    LARGE = "L",
+    XLARGE = "XL",
+    XXLARGE = "XXL"
 }
+
 export default interface Item {
+    itemColorId?: string;
+    price: number;
+    size: ItemSize;
+    inventory: number;
     id: string;
-    name: string;
-    colors: ItemColor[];
-    type: ItemType;
 }

@@ -8,7 +8,6 @@ interface Props {
 }
 
 const ColorSelector: React.FC<Props> = ({ colors, selectedColor, setSelectedColor }) => {
-
     return (<div className="mb-4 flex space-x-4">
         {colors.map((color) => (
             <div

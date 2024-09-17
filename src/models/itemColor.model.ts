@@ -1,3 +1,4 @@
+import Item from "./item.model";
 
 export enum Color {
     BLUE = "Blue",
@@ -8,16 +9,10 @@ export enum Color {
     PURPLE = "Purple"
 }
 
-export enum ItemSize {
-    SMALL = "Small",
-    MEDIUM = "Medium",
-    LARGE = "Large",
-    XLARGE = "XL",
-    XXLARGE = "XXL"
-}
-
 export default interface ItemColor {
-    sizeToPriceMap: Record<ItemSize, number>;
+    id: string;
+    groupedItemId?: string;
     color: Color;
     imgUrls: string[];
+    items: Item[];
 }

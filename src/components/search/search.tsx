@@ -45,7 +45,7 @@ const Search: React.FC<Props> = () => {
                 <SearchFilters></SearchFilters>
             </Drawer>
             {filteredItems.map(filteredItem => (
-                <SearchCard key={filteredItem.id} item={filteredItem}></SearchCard>
+                <SearchCard key={filteredItem.id} groupedItem={filteredItem}></SearchCard>
             ))}
         </div>
     );

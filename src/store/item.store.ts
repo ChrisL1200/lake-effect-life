@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import Item, { ItemType } from '../models/item.model';
 import ItemColor, { Color } from '../models/itemColor.model';
+import GroupedItem, { ItemType } from '../models/groupedItem.model';
 
 export enum ItemFilterKey {
     Color = "Color",
@@ -27,8 +27,8 @@ export interface SearchOption {
 
 interface ItemsState {
     filters: ItemFilter[];
-    itemMap: Record<string, Item>;
-    filteredItems: Item[];
+    groupedItemMap: Record<string, GroupedItem>;
+    filteredItems: GroupedItem[];
     searchOptions: SearchOption[];
     selectedSearchOption: SearchOption;
 }
@@ -46,7 +46,7 @@ const initialState: ItemsState = {
             options: [ItemType.HOODIE, ItemType.JACKET, ItemType.LONGSLEEVE, ItemType.SWEATSHIRT, ItemType.TANKTOP, ItemType.TSHIRT]
         }
     ],
-    itemMap: {},
+    groupedItemMap: {},
     filteredItems: [],
     searchOptions: [],
     selectedSearchOption: {
@@ -63,19 +63,19 @@ const itemsSlice = createSlice({
     name: 'items',
     initialState,
     reducers: {
-        addItems: (state, action: PayloadAction<Item[]>) => {
-            const items: Item[] = action.payload;
+        addGroupedItems: (state, action: PayloadAction<GroupedItem[]>) => {
+            const groupedItems: GroupedItem[] = action.payload;
             state.searchOptions = [];
             const searchOptionsMap: Record<SearchOptionKey, string[]> = {
                 [SearchOptionKey.Name]: [],
                 [SearchOptionKey.Type]: []
             };
 
-            items.forEach((item: Item) => {
-                state.itemMap[item.id] = item;
+            groupedItems.forEach((item: GroupedItem) => {
+                state.groupedItemMap[item.id] = item;
 
-                if (!searchOptionsMap[SearchOptionKey.Name].includes(item.name)) {
-                    searchOptionsMap[SearchOptionKey.Name].push(item.name);
+                if (!searchOptionsMap[SearchOptionKey.Name].includes(item.id)) {
+                    searchOptionsMap[SearchOptionKey.Name].push(item.id);
                 }
 
                 if (!searchOptionsMap[SearchOptionKey.Type].includes(item.type)) {
@@ -89,8 +89,7 @@ const itemsSlice = createSlice({
                 })
             });
 
-            state.filteredItems = items;
-            console.log('addItems', state);
+            state.filteredItems = groupedItems;
         },
         updateFilters(state, action: PayloadAction<{ filters?: ItemFilter[], searchOption?: SearchOption }>) {
             const { filters, searchOption } = action.payload;
@@ -98,8 +97,8 @@ const itemsSlice = createSlice({
                 state.filters = filters;
             }
 
-            state.filteredItems = Object.values(state.itemMap).map((item: Item) => JSON.parse(JSON.stringify(item))).filter((item: Item) => {
-                item.colors = item.colors.filter((itemColor: ItemColor) => {
+            state.filteredItems = Object.values(state.groupedItemMap).map((item: GroupedItem) => JSON.parse(JSON.stringify(item))).filter((groupedItem: GroupedItem) => {
+                groupedItem.colors = groupedItem.colors.filter((itemColor: ItemColor) => {
                     let unfilteredColor = true;
                     state.filters.forEach((filter: ItemFilter) => {
                         switch (filter.key) {
@@ -113,7 +112,7 @@ const itemsSlice = createSlice({
                     return unfilteredColor;
                 });
 
-                if (item.colors.length === 0) {
+                if (groupedItem.colors.length === 0) {
                     return false;
                 }
 
@@ -121,7 +120,7 @@ const itemsSlice = createSlice({
                 state.filters.forEach((filter: ItemFilter) => {
                     switch (filter.key) {
                         case ItemFilterKey.Type:
-                            if (filter.selectedValues.length > 0 && !filter.selectedValues.includes(item.type)) {
+                            if (filter.selectedValues.length > 0 && !filter.selectedValues.includes(groupedItem.type)) {
                                 unfilteredItem = false;
                             }
                             break;
@@ -132,19 +131,19 @@ const itemsSlice = createSlice({
                     state.selectedSearchOption = searchOption;
                     switch (searchOption.key) {
                         case SearchOptionKey.Text:
-                            if (!containsCaseInsensitive(searchOption.value, item.name) && !containsCaseInsensitive(searchOption.value, item.type)) {
+                            if (!containsCaseInsensitive(searchOption.value, groupedItem.id) && !containsCaseInsensitive(searchOption.value, groupedItem.type)) {
                                 unfilteredItem = false;
                             }
                             break;
 
                         case SearchOptionKey.Name:
-                            if (searchOption.value !== item.name) {
+                            if (searchOption.value !== groupedItem.id) {
                                 unfilteredItem = false
                             }
                             break;
 
                         case SearchOptionKey.Type:
-                            if (searchOption.value !== item.type) {
+                            if (searchOption.value !== groupedItem.type) {
                                 unfilteredItem = false
                             }
                             break;
@@ -157,6 +156,6 @@ const itemsSlice = createSlice({
     },
 });
 
-export const { addItems, updateFilters } = itemsSlice.actions;
+export const { addGroupedItems, updateFilters } = itemsSlice.actions;
 
 export default itemsSlice.reducer;
