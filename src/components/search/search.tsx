@@ -44,9 +44,11 @@ const Search: React.FC<Props> = () => {
             <Drawer open={state.mobileFilterOpen} onClose={toggleMobileDrawer} className="p-4">
                 <SearchFilters></SearchFilters>
             </Drawer>
-            {filteredItems.map(filteredItem => (
-                <SearchCard key={filteredItem.id} groupedItem={filteredItem}></SearchCard>
-            ))}
+            <div className="grid grid-cols-2 gap-4">
+                {filteredItems.map(filteredItem => (
+                    <SearchCard key={filteredItem.id} groupedItem={filteredItem}></SearchCard>
+                ))}
+            </div>
         </div>
     );
 };

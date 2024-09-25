@@ -84,7 +84,7 @@ const SearchFilters: React.FC<Props> = () => {
                                         <ListItemPrefix className="mr-3">
                                             <Checkbox
                                                 id="vertical-list-react"
-                                                defaultChecked={filter.selectedValues.includes(option)}
+                                                checked={filter.selectedValues.includes(option)}
                                                 onChange={() => updateFilter(filter.key, option)}
                                                 ripple={false}
                                                 className="hover:before:opacity-0"

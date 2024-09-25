@@ -4,6 +4,7 @@ import {
     CardHeader,
     CardBody,
     Typography,
+    Carousel
 } from "@material-tailwind/react";
 import ItemColor from '../../models/itemColor.model';
 import ColorSelector from '../common/ColorSelector';
@@ -29,12 +30,19 @@ const SearchCard: React.FC<Props> = (props: Props) => {
     };
 
     return (
-        <Card className="mt-6 w-96">
-            <CardHeader onClick={handleClick} color="blue-gray" className="relative h-56">
-                <img
-                    src={`/images/groupedItems/${selectedItemColor.imgUrls[0]}`}
-                    alt="card-image"
-                />
+        <Card className="mt-6">
+            <CardHeader onClick={handleClick} className="relative">
+                <Carousel
+                    className="rounded-xl"
+                >
+                    {selectedItemColor.imgUrls.map((image, index) => (
+                        <img
+                            src={`/images/groupedItems/${image}`}
+                            key={index}
+                            className="object-cover w-full"
+                        />
+                    ))}
+                </Carousel>
             </CardHeader>
             <CardBody>
                 <ColorSelector colors={groupedItem.colors} selectedColor={selectedItemColor} setSelectedColor={setSelectedItemColor}></ColorSelector>

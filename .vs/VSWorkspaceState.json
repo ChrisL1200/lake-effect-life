@@ -3,11 +3,14 @@
     "",
     "\\public",
     "\\public\\images",
-    "\\public\\images\\items",
     "\\src",
     "\\src\\components",
+    "\\src\\components\\cart",
+    "\\src\\components\\common",
+    "\\src\\components\\home",
+    "\\src\\components\\search",
     "\\src\\store"
   ],
-  "SelectedNode": "\\src\\store\\item.store.ts",
+  "SelectedNode": "\\src\\components\\home\\Home.tsx",
   "PreviewInSolutionExplorer": false
 }

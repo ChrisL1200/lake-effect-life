@@ -18,19 +18,19 @@ const Home: React.FC = () => {
     }];
 
     return (
-        <div className="flex min-h-screen w-full flex-col items-center justify-center bg-blue-100 p-4">
+        <div className="flex min-h-screen w-full flex-col items-center justify-center p-4">
             <Card className="w-full lg:w-2/3 mb-8 shadow-xl">
                 <Carousel
                     className="rounded-xl"
                     autoplay
                     autoplayDelay={3000}
                     loop
-                    transition="transition-opacity"
                 >
                     {images.map(image => (
                         <img
                             src={image.src}
                             alt={image.alt}
+                            key={image.alt}
                             className="object-cover w-full h-[400px]"
                         />
                     ))}

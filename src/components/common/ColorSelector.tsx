@@ -8,21 +8,23 @@ interface Props {
 }
 
 const ColorSelector: React.FC<Props> = ({ colors, selectedColor, setSelectedColor }) => {
-    return (<div className="mb-4 flex space-x-4">
+    return (<div className="mb-4 pb-2 flex overflow-x-auto overflow-y-hidden">
         {colors.map((color) => (
-            <div
-                key={color.color}
-                onClick={() => setSelectedColor(color)}
-                className={`h-6 w-6 rounded-full cursor-pointer border-1 ${selectedColor.color === color.color ? 'border-black' : 'border-transparent'
-                    }`}
-                style={{ backgroundColor: color.color.toLowerCase() }}
-            >
-                {/* Add a check mark if the color is selected */}
-                {selectedColor === color && (
-                    <div className="flex items-center justify-center h-full">
-                        <span className="text-white text-xl">&#10003;</span>
-                    </div>
-                )}
+            <div className="pr-2" key={color.color}>
+                <div
+                    key={color.color}
+                    onClick={() => setSelectedColor(color)}
+                    className={`h-6 w-6 rounded-full cursor-pointer border-1 ${selectedColor.color === color.color ? 'border-black' : 'border-transparent'
+                        }`}
+                    style={{ backgroundColor: color.color.toLowerCase() }}
+                >
+                    {/* Add a check mark if the color is selected */}
+                    {selectedColor === color && (
+                        <div className="flex items-center justify-center h-full">
+                            <span className="text-white text-xl">&#10003;</span>
+                        </div>
+                    )}
+                </div>
             </div>
         ))}
     </div>);

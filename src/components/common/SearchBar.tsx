@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import { Input, List, ListItem } from '@material-tailwind/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
-import { SearchOption, SearchOptionKey, updateFilters } from '../../store/item.store';
+import { ItemFilter, ItemFilterKey, SearchOption, SearchOptionKey, updateFilters } from '../../store/item.store';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-interface SearchProps {}
-
-const SearchBar: React.FC<SearchProps> = () => {
+const SearchBar: React.FC = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const location = useLocation();
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredOptions, setFilteredOptions] = useState<SearchOption[]>([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
+
+    const filters = useSelector((reduxState: RootState) => reduxState.items.filters);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
@@ -31,7 +34,22 @@ const SearchBar: React.FC<SearchProps> = () => {
     const handleSelect = (searchOption: SearchOption) => {
         setSearchTerm(searchOption.value);
         setShowSuggestions(false);
-        dispatch(updateFilters({ searchOption }));
+        if (location.pathname !== '/search') {
+            navigate('/search');
+        }
+
+        const updateFilterPayload: { filters?: ItemFilter[], searchOption?: SearchOption } = {};
+        if (searchOption.key !== SearchOptionKey.Text) {
+            updateFilterPayload.filters = structuredClone(filters);
+            updateFilterPayload.filters.forEach((updatedFilter: ItemFilter) => {
+                if (updatedFilter.key === searchOption.key) {
+                    updatedFilter.selectedValues = [searchOption.value];
+                }
+            });
+        } else {
+            updateFilterPayload.searchOption = searchOption;
+        }
+        dispatch(updateFilters(updateFilterPayload));
     };
 
     const options = useSelector((reduxState: RootState) => {

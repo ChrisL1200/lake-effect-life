@@ -98,6 +98,11 @@ const itemsSlice = createSlice({
                 })
             });
 
+            const sortOrder: SearchOptionKey[] = [SearchOptionKey.Type, SearchOptionKey.Name];
+            state.searchOptions.sort((a: SearchOption, b: SearchOption) => {
+                return sortOrder[a.key] > sortOrder[b.key] ? 1 : -1;
+            });
+
             state.filteredItems = groupedItems;
         },
         updateFilters(state, action: PayloadAction<{ filters?: ItemFilter[], searchOption?: SearchOption }>) {
