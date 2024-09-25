@@ -44,7 +44,7 @@ const SearchCard: React.FC<Props> = (props: Props) => {
             </CardHeader>
             <CardBody className="p-4">
                 <ColorSelector colors={groupedItem.colors} selectedColor={selectedItemColor} setSelectedColor={setSelectedItemColor}></ColorSelector>
-                <Typography variant="h6" color="blue-gray" className="mb-2">
+                <Typography variant="h6" color="blue-gray" className="truncate mb-2">
                     <a onClick={handleClick}>{groupedItem.id}</a>
                 </Typography>
                 <p>${getPrice()}</p>
