@@ -33,7 +33,7 @@ const Search: React.FC<Props> = () => {
 
     return (
         <div>
-            <div className="flex p-3">
+            <div className="flex w-full p-3">
                 <span className="pr-2">
                     <SearchBar></SearchBar>
                 </span>
@@ -41,7 +41,7 @@ const Search: React.FC<Props> = () => {
                     <Button onClick={toggleMobileDrawer}>Filter & Sort</Button>
                 </span>
             </div>
-            <Drawer open={state.mobileFilterOpen} onClose={toggleMobileDrawer} className="p-4">
+            <Drawer open={state.mobileFilterOpen} onClose={toggleMobileDrawer} className="p-4 max-h-screen">
                 <SearchFilters></SearchFilters>
             </Drawer>
             <div className="grid grid-cols-2 gap-4">

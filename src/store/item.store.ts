@@ -1,12 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import ItemColor, { Color } from '../models/itemColor.model';
-import GroupedItem, { ItemType } from '../models/groupedItem.model';
-import Item from '../models/item.model';
+import GroupedItem, { ItemGender, ItemType } from '../models/groupedItem.model';
+import Item, { ItemSize } from '../models/item.model';
 
 export enum ItemFilterKey {
     Color = "Color",
     Type = "Type",
-    Search = "Search"
+    Search = "Search",
+    Size = "Size",
+    Gender = "Gender",
+    Price = "Price"
 }
 
 export interface ItemFilter {
@@ -46,6 +49,22 @@ const initialState: ItemsState = {
             key: ItemFilterKey.Type,
             selectedValues: [],
             options: [ItemType.HOODIE, ItemType.JACKET, ItemType.LONGSLEEVE, ItemType.SWEATSHIRT, ItemType.TANKTOP, ItemType.TSHIRT]
+        },
+        {
+            key: ItemFilterKey.Gender,
+            selectedValues: [],
+            options: [ItemGender.WOMEN, ItemGender.MEN, ItemGender.KIDS]
+        },
+        {
+            key: ItemFilterKey.Size,
+            selectedValues: [],
+            options: [
+                ItemSize.SMALL,
+                ItemSize.MEDIUM,
+                ItemSize.LARGE,
+                ItemSize.XLARGE,
+                ItemSize.XXLARGE
+            ]
         }
     ],
     groupedItemMap: {},
@@ -123,6 +142,21 @@ const itemsSlice = createSlice({
                                 break;
                         }
                     });
+
+                    itemColor.items = itemColor.items.filter((item: Item) => {
+                        let unfilteredItem = true;
+                        state.filters.forEach((filter: ItemFilter) => {
+                            switch (filter.key) {
+                                case ItemFilterKey.Size:
+                                    if (filter.selectedValues.length > 0 && !filter.selectedValues.includes(item.size)) {
+                                        unfilteredItem = false;
+                                    }
+                                    break;
+                            }
+                        });
+
+                        return unfilteredItem;
+                    });
                     return unfilteredColor;
                 });
 
@@ -135,6 +169,11 @@ const itemsSlice = createSlice({
                     switch (filter.key) {
                         case ItemFilterKey.Type:
                             if (filter.selectedValues.length > 0 && !filter.selectedValues.includes(groupedItem.type)) {
+                                unfilteredItem = false;
+                            }
+                            break;
+                        case ItemFilterKey.Gender:
+                            if (filter.selectedValues.length > 0 && !filter.selectedValues.includes(groupedItem.gender)) {
                                 unfilteredItem = false;
                             }
                             break;

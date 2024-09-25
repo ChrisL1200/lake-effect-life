@@ -31,23 +31,21 @@ const SearchCard: React.FC<Props> = (props: Props) => {
 
     return (
         <Card className="mt-6">
-            <CardHeader onClick={handleClick} className="relative">
-                <Carousel
-                    className="rounded-xl"
-                >
+            <CardHeader className="relative">
+                <Carousel>
                     {selectedItemColor.imgUrls.map((image, index) => (
                         <img
                             src={`/images/groupedItems/${image}`}
                             key={index}
-                            className="object-cover w-full"
+                            className="h-48 w-auto object-cover"
                         />
                     ))}
                 </Carousel>
             </CardHeader>
-            <CardBody>
+            <CardBody className="p-4">
                 <ColorSelector colors={groupedItem.colors} selectedColor={selectedItemColor} setSelectedColor={setSelectedItemColor}></ColorSelector>
-                <Typography variant="h5" color="blue-gray" className="mb-2">
-                    {groupedItem.id}
+                <Typography variant="h6" color="blue-gray" className="mb-2">
+                    <a onClick={handleClick}>{groupedItem.id}</a>
                 </Typography>
                 <p>${getPrice()}</p>
             </CardBody>

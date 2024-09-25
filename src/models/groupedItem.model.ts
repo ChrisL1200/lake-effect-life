@@ -8,8 +8,15 @@ export enum ItemType {
     SWEATSHIRT = "Sweatshirt",
     TANKTOP = "Tank Top"
 }
+
+export enum ItemGender {
+    MEN = "Men",
+    WOMEN = "Women",
+    KIDS = "Kids"
+}
 export default interface GroupedItem {
     id: string;
     colors: ItemColor[];
     type: ItemType;
+    gender: ItemGender;
 }

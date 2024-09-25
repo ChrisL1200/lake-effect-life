@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
     Accordion,
     AccordionHeader,
@@ -38,7 +38,9 @@ const SearchFilters: React.FC<Props> = () => {
     const [state, setState] = useState<State>({
         accordionExpandMap: {
             [ItemFilterKey.Color]: true,
-            [ItemFilterKey.Type]: true
+            [ItemFilterKey.Type]: true,
+            [ItemFilterKey.Gender]: true,
+            [ItemFilterKey.Size]: true
         }
     });
 
@@ -69,7 +71,7 @@ const SearchFilters: React.FC<Props> = () => {
     }
 
     return (
-        <>
+        <div className="max-h-full overflow-y-auto">
             {filters.map(filter => (
                 <Accordion key={filter.key} open={state.accordionExpandMap[filter.key]} icon={<Icon open={state.accordionExpandMap[filter.key]} />}>
                     <AccordionHeader className="p-2" onClick={() => handleOpen(filter.key)}>{filter.key}</AccordionHeader>
@@ -103,7 +105,7 @@ const SearchFilters: React.FC<Props> = () => {
                     </AccordionBody>
                 </Accordion>
             ))}
-        </>
+        </div>
     );
 }
 

@@ -59,23 +59,23 @@ const View: React.FC = () => {
 
     return (
         <div className="mx-auto max-w-3xl p-6">
-            <h1 className="text-3xl font-bold mb-4">{groupedItem.id}</h1>
-            <p className="text-xl text-gray-700 mb-6">${selectedItem?.price}</p>
+            <h1 className="text-3xl font-bold mb-2">{groupedItem.id}</h1>
+            <p className="text-xl text-gray-700 mb-2">${selectedItem?.price}</p>
 
-            <div className="relative w-full h-64 mb-6">
+            <div className="relative w-full mb-2">
                 <Carousel loop>
                     {selectedColor?.imgUrls.map((image: string, index: number) => (
                         <img
                             key={index}
                             src={`/images/groupedItems/${image}`}
                             alt={`Image ${index + 1}`}
-                            className="w-full h-full object-cover rounded-lg"
+                            className="object-cover w-full max-h-96"
                         />
                     ))}
                 </Carousel>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-2">
                 <h2 className="text-lg font-semibold mb-2">Select Color:</h2>
 
                 <ColorSelector colors={groupedItem.colors} selectedColor={selectedColor!} setSelectedColor={setColor}></ColorSelector>
