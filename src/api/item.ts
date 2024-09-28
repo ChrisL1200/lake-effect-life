@@ -81,7 +81,7 @@ const itemGenerator = (index: number): GroupedItem => {
     const type = getRandomValue(typeList);
     const gender = getRandomValue(genderList);
     const id = `${gender} ${type} ${index}`;
-    const colors = colorList.map((color: Color, colorIndex: number) => ({
+    const colors = getRandomSubarray(colorList).map((color: Color, colorIndex: number) => ({
         id: `${index}-${colorIndex}`,
         color,
         groupedItemId: id,

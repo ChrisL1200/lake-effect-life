@@ -2,17 +2,27 @@
 import { useParams } from 'react-router-dom';
 import { Breadcrumbs, Button, Carousel } from '@material-tailwind/react';
 import { useDispatch, useSelector } from 'react-redux';
+import classNames from 'classnames';
 import { RootState } from '../../store';
 import ColorSelector from '../common/ColorSelector';
 import GroupedItem from '../../models/groupedItem.model';
 import ItemColor from '../../models/itemColor.model';
-import Item from '../../models/item.model';
+import Item, { ItemSize } from '../../models/item.model';
 import { upsertItemFromCart } from '../../store/cart.store';
 import CartItem from '../../models/cartItem.model';
+
 
 const View: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const dispatch = useDispatch();
+
+    const sizeList: ItemSize[] = [
+        ItemSize.SMALL,
+        ItemSize.MEDIUM,
+        ItemSize.LARGE,
+        ItemSize.XLARGE,
+        ItemSize.XXLARGE
+    ]
 
     const selectedColor: ItemColor = useSelector((reduxState: RootState) => {
         return reduxState.items.itemColorMap[id!] ?? {};
@@ -52,9 +62,17 @@ const View: React.FC = () => {
         setSelectedItem(itemColor.items.find((item: Item) => item.size === size));
     };
 
+    const setSize = (size: ItemSize) => {
+        if (availableSizes.includes(size)) {
+            setSelectedItem(selectedColor.items.find((item: Item) => item.size === size));
+        }
+    }
+
     if (!isItemLoaded) {
         return <div>Loading...</div>; 
     }
+
+    const availableSizes = selectedColor.items.map((item) => item.size);
 
     return (
         <div className="mx-auto max-w-3xl px-6 py-2">
@@ -89,17 +107,20 @@ const View: React.FC = () => {
             <div className="mb-8">
                 <h2 className="text-lg font-semibold mb-2">Select Size:</h2>
                 <div className="flex space-x-4">
-                    {selectedColor?.items.map((item) => (
+                    {sizeList.map((size) => (
                         <div
-                            key={item.id}
-                            onClick={() => setSelectedItem(item)}
-                            className={`cursor-pointer border px-4 py-2 rounded-md transition-all duration-200 
-                                ${item.id === selectedItem?.id
-                                    ? 'bg-blue-500 text-white'
-                                    : 'bg-gray-100 text-black hover:bg-blue-100'
-                                }`}
+                            key={size}
+                            onClick={() => setSize(size)}
+                            className={classNames(
+                                'border px-4 py-2 rounded-md transition-all duration-200', 
+                                {
+                                    'bg-blue-500 text-white': size === selectedItem?.size, 
+                                    'bg-gray-300 text-gray-500 cursor-not-allowed': !availableSizes.includes(size), 
+                                    'bg-gray-100 text-black hover:bg-blue-100': availableSizes.includes(size) && size !== selectedItem?.size, 
+                                }
+                            )}
                         >
-                            {item?.size}
+                            {size}
                         </div>
                     ))}
                 </div>
