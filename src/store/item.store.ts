@@ -36,6 +36,7 @@ interface ItemsState {
     searchOptions: SearchOption[];
     selectedSearchOption: SearchOption;
     itemMap: Record<string, Item>;
+    itemColorMap: Record<string, ItemColor>;
 }
 
 const initialState: ItemsState = {
@@ -74,6 +75,7 @@ const initialState: ItemsState = {
         key: SearchOptionKey.Text,
         value: ""
     },
+    itemColorMap: {},
     itemMap: {}
 };
 
@@ -105,6 +107,7 @@ const itemsSlice = createSlice({
                 }
 
                 groupedItem.colors.forEach((itemColor: ItemColor) => {
+                    state.itemColorMap[itemColor.id] = itemColor;
                     itemColor.items.forEach((item: Item) => {
                         state.itemMap[item.id] = item;
                     })

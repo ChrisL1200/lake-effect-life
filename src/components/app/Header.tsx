@@ -39,11 +39,6 @@ const Header: React.FC = () => {
 
                 <div className="relative ml-auto mr-2" onClick={handleLoginClick}>
                     <PersonIcon className="h-8 w-8 text-gray-600" />
-                    {cartItems.length > 0 &&
-                        <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
-                            {cartItems.length}
-                        </span>
-                    }
                 </div>
 
                 <div className="relative" onClick={handleCartClick}>

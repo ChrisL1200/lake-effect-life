@@ -8,6 +8,7 @@ import {
 import SearchFilters from './SearchFilters.tsx';
 import SearchCard from './SearchCard.tsx';
 import SearchBar from '../common/SearchBar.tsx';
+import { ItemFilter } from '../../store/item.store.ts';
 
 interface Props {}
 
@@ -31,15 +32,29 @@ const Search: React.FC<Props> = () => {
         return (reduxState.items.filteredItems ?? []);
     });
 
+    const filters = useSelector((reduxState: RootState) => reduxState.items.filters);
+
+    const filterAndSortText = () => {
+        let text = "Filter";
+        let filterCount = 0;
+        filters.forEach((filter: ItemFilter) => {
+            filterCount += filter.selectedValues.length;
+        });
+
+        if (filterCount > 0) {
+            text = `${text} (${filterCount})`;
+        }
+
+        return text;
+    };
+
     return (
         <div>
-            <div className="flex w-full p-3">
-                <span className="pr-2">
-                    <SearchBar></SearchBar>
-                </span>
-                <span>
-                    <Button onClick={toggleMobileDrawer}>Filter & Sort</Button>
-                </span>
+            <div className="mt-2 w-full p-2">
+                <SearchBar></SearchBar>
+            </div>
+            <div className="p-2 mb-2">
+                <Button className="w-full" onClick={toggleMobileDrawer}>{filterAndSortText()}</Button>
             </div>
             <Drawer open={state.mobileFilterOpen} onClose={toggleMobileDrawer} className="p-4 max-h-screen">
                 <SearchFilters></SearchFilters>

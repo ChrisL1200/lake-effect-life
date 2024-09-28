@@ -43,7 +43,7 @@ const sizeList: ItemSize[] = [
     ItemSize.XXLARGE
 ]
 
-const imgUrlList: string[] = ['great-lakes-mens-t-shirt.jpg', 'great-lakes-mens-hoodie.jpg', 'great-lakes-mens-navy-t-shirt.jpg', 'great-lakes-mens-white-t-shirt.jpg']
+const imgUrlList: string[] = ['great-lakes-mens-t-shirt.jpg', 'bills-t-shirt.jpg', 'great-lakes-mens-navy-t-shirt.jpg', 'great-lakes-mens-white-t-shirt.jpg']
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getRandomValue = (list: any[]): any => {
@@ -78,17 +78,18 @@ const getRandomSubarray = (arr: any[]): any[] => {
 const getRandomNumber = () => Math.floor(Math.random() * 50) + 20;
 
 const itemGenerator = (index: number): GroupedItem => {
-    const colors = colorList.map((color: Color, colorIndex: number) => ({
-        id: `${index}-${colorIndex}`,
-        color,
-        imgUrls: getRandomSubarray(imgUrlList),
-        items: getRandomSubarray(sizeList).map((size: ItemSize, sizeIndex: number) => ({
-            size, price: getRandomNumber(), inventory: getRandomNumber(), id: `${index}-${colorIndex}-${sizeIndex}`
-        }))
-    }));
     const type = getRandomValue(typeList);
     const gender = getRandomValue(genderList);
     const id = `${gender} ${type} ${index}`;
+    const colors = colorList.map((color: Color, colorIndex: number) => ({
+        id: `${index}-${colorIndex}`,
+        color,
+        groupedItemId: id,
+        imgUrls: getRandomSubarray(imgUrlList),
+        items: getRandomSubarray(sizeList).map((size: ItemSize, sizeIndex: number) => ({
+            size, price: getRandomNumber(), inventory: getRandomNumber(), id: `${index}-${colorIndex}-${sizeIndex}`, itemColorId: `${index}-${colorIndex}`
+        }))
+    }));
 
     return { id, type, gender, colors };
 };
@@ -96,8 +97,8 @@ const itemGenerator = (index: number): GroupedItem => {
 const ITEMS_LENGTH = 50;
 
 const getGroupedItems = async () => {
-    const mockGroupItems: GroupedItem[] = [...Array(ITEMS_LENGTH)].map((_, index: number) => itemGenerator(index));
-    console.log(JSON.stringify(mockGroupItems));
+    //const mockGroupItems: GroupedItem[] = [...Array(ITEMS_LENGTH)].map((_, index: number) => itemGenerator(index));
+    //console.log(JSON.stringify(mockGroupItems));
     await new Promise((resolve) => setTimeout(resolve, 500));
     return items; 
 };

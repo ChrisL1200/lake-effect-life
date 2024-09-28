@@ -26,7 +26,7 @@ const SearchCard: React.FC<Props> = (props: Props) => {
     }
 
     const handleClick = () => {
-        navigate(`/item/${groupedItem.id}`);
+        navigate(`/item/${selectedItemColor.id}`);
     };
 
     return (

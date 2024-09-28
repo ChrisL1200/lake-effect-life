@@ -1,14 +1,13 @@
 ﻿import React from 'react';
-import { Carousel, Typography, Button, Card } from "@material-tailwind/react";
+import { Carousel, Typography, Card } from "@material-tailwind/react";
 import SearchBar from '../common/SearchBar.tsx';
 
 const Home: React.FC = () => {
-    ['great-lakes-mens-t-shirt.jpg', 'great-lakes-mens-hoodie.jpg', 'great-lakes-mens-navy-t-shirt.jpg', 'great-lakes-mens-white-t-shirt.jpg']
     const images = [{
         src: "/images/groupedItems/great-lakes-mens-t-shirt.jpg",
         alt: "Lake Apparel 1"
     }, {
-        src: "/images/groupedItems/great-lakes-mens-hoodie.jpg",
+        src: "/images/groupedItems/bills-t-shirt.jpg",
         alt: "Lake Apparel 2"
     }, {
         src: "/images/groupedItems/great-lakes-mens-navy-t-shirt.jpg",
