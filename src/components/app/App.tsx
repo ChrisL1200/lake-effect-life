@@ -10,6 +10,7 @@ import { addGroupedItems } from '../../store/item.store.ts';
 import api from '../../api/index.ts';
 import Cart from '../cart/Cart.tsx';
 import Checkout from '../checkout/Checkout.tsx';
+import Login from '../login/Login.tsx';
 import GroupedItem from '../../models/groupedItem.model.ts';
 
 const App: React.FC = () => {
@@ -33,6 +34,7 @@ const App: React.FC = () => {
                     <Route path="/item/:id" element={<View />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/login" element={<Login />} />
                 </Routes>
             </Router>
         </>
