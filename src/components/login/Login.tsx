@@ -26,7 +26,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="flex min-h-screen justify-center p-4">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+      <div className="bg-white rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
         <form className="space-y-4 mb-4">
           <Input label="Email" size="lg" type="email" required />

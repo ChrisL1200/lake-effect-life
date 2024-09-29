@@ -80,12 +80,12 @@ const SearchFilters: React.FC<Props> = () => {
                             {filter.options.map(option => (
                                 <ListItem key={option} className="p-0">
                                     <label
-                                        htmlFor="vertical-list-react"
+                                        htmlFor={`search-filter-checkbox-${filter.key}-${option}`}
                                         className="flex w-full cursor-pointer items-center"
                                     >
                                         <ListItemPrefix className="mr-3">
                                             <Checkbox
-                                                id="vertical-list-react"
+                                                id={`search-filter-checkbox-${filter.key}-${option}`}
                                                 checked={filter.selectedValues.includes(option)}
                                                 onChange={() => updateFilter(filter.key, option)}
                                                 ripple={false}

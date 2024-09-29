@@ -19,10 +19,19 @@ const SearchCard: React.FC<Props> = (props: Props) => {
     const { groupedItem } = props;
     const navigate = useNavigate();
 
+    const [renderCarousel, setRenderCarousel] = useState<boolean>(true);
     const [selectedItemColor, setSelectedItemColor] = useState<ItemColor>(groupedItem.colors[0]);
 
     const getPrice = () => {
         return selectedItemColor.items[0].price;
+    }
+
+    const setSelectedColor = (selectedColor: ItemColor) => {
+        setSelectedItemColor(selectedColor);
+        setRenderCarousel(false);
+        setTimeout(() => {
+            setRenderCarousel(true);
+        }, 0)
     }
 
     const handleClick = () => {
@@ -32,18 +41,21 @@ const SearchCard: React.FC<Props> = (props: Props) => {
     return (
         <Card className="mt-6">
             <CardHeader className="relative">
-                <Carousel>
-                    {selectedItemColor.imgUrls.map((image, index) => (
-                        <img
-                            src={`/images/groupedItems/${image}`}
-                            key={index}
-                            className="h-48 w-auto object-cover"
-                        />
-                    ))}
-                </Carousel>
+                {renderCarousel &&
+                    <Carousel>
+                        {selectedItemColor.imgUrls.map((image, index) => (
+                            <img
+                                src={`/images/groupedItems/${image}`}
+                                key={index}
+                                className="h-48 w-auto object-cover"
+                                loading="lazy"
+                            />
+                        ))}
+                    </Carousel>
+                }
             </CardHeader>
             <CardBody className="p-4">
-                <ColorSelector colors={groupedItem.colors} selectedColor={selectedItemColor} setSelectedColor={setSelectedItemColor}></ColorSelector>
+                <ColorSelector colors={groupedItem.colors} selectedColor={selectedItemColor} setSelectedColor={setSelectedColor}></ColorSelector>
                 <Typography variant="h6" color="blue-gray" className="truncate mb-2">
                     <a onClick={handleClick}>{groupedItem.id}</a>
                 </Typography>

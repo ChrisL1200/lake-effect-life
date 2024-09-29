@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Breadcrumbs, Button, Carousel } from '@material-tailwind/react';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
+import { useNavigate } from 'react-router-dom';
 import { RootState } from '../../store';
 import ColorSelector from '../common/ColorSelector';
 import GroupedItem from '../../models/groupedItem.model';
@@ -14,6 +15,7 @@ import CartItem from '../../models/cartItem.model';
 
 const View: React.FC = () => {
     const { id } = useParams<{ id: string }>();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const sizeList: ItemSize[] = [
@@ -59,6 +61,7 @@ const View: React.FC = () => {
 
     const setColor = (itemColor: ItemColor) => {
         const size = selectedItem!.size;
+        navigate(`/item/${itemColor.id}`, { replace: true });
         setSelectedItem(itemColor.items.find((item: Item) => item.size === size));
     };
 
@@ -91,7 +94,7 @@ const View: React.FC = () => {
                         <img
                             key={index}
                             src={`/images/groupedItems/${image}`}
-                            alt={`Image ${index + 1}`}
+                            alt={`Image ${selectedColor.id} ${index + 1}`}
                             className="object-cover w-full max-h-96"
                         />
                     ))}
