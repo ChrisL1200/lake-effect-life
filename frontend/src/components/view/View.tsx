@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Breadcrumbs, Button, Carousel } from '@material-tailwind/react';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { RootState } from '../../store';
 import ColorSelector from '../common/ColorSelector';
 import GroupedItem from '../../models/groupedItem.model';
@@ -78,11 +78,11 @@ const View: React.FC = () => {
     const availableSizes = selectedColor.items.map((item) => item.size);
 
     return (
-        <div className="mx-auto max-w-3xl px-6 py-2">
+        <div className="px-6 py-2 mx-auto max-w-3xl">
             <Breadcrumbs fullWidth className="bg-transparent pl-0">
-                <a href="/search" className="opacity-60">
+                <Link to="/search" className="opacity-60">
                     Search
-                </a>
+                </Link>
                 <a>{groupedItem.id}</a>
             </Breadcrumbs>
             <h1 className="text-3xl font-bold mb-2">{groupedItem.id}</h1>
@@ -104,7 +104,7 @@ const View: React.FC = () => {
             <div className="mb-2">
                 <h2 className="text-lg font-semibold mb-2">Select Color:</h2>
 
-                <ColorSelector colors={groupedItem.colors} selectedColor={selectedColor!} setSelectedColor={setColor}></ColorSelector>
+                <ColorSelector colors={groupedItem.itemColors} selectedColor={selectedColor!} setSelectedColor={setColor}></ColorSelector>
             </div>
 
             <div className="mb-8">

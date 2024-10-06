@@ -16,7 +16,7 @@ export enum ItemGender {
 }
 export default interface GroupedItem {
     id: string;
-    colors: ItemColor[];
+    itemColors: ItemColor[];
     type: ItemType;
     gender: ItemGender;
 }

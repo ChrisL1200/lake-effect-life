@@ -50,8 +50,10 @@ router.get('/', async (req: Request, res: Response) => {
             limit: Number(limit),
             include: [{
                 model: ItemColor,
+                as: 'itemColors',
                 include: [{
                     model: Item,
+                    as: 'items'
                 }]
             }],
         });

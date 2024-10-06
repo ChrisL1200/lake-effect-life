@@ -95,8 +95,6 @@ const itemsSlice = createSlice({
                 [SearchOptionKey.Type]: []
             };
 
-            console.log(groupedItems);
-
             groupedItems.forEach((groupedItem: GroupedItem) => {
                 state.groupedItemMap[groupedItem.id] = groupedItem;
 
@@ -108,7 +106,7 @@ const itemsSlice = createSlice({
                     searchOptionsMap[SearchOptionKey.Type].push(groupedItem.type);
                 }
 
-                groupedItem.colors.forEach((itemColor: ItemColor) => {
+                groupedItem.itemColors.forEach((itemColor: ItemColor) => {
                     state.itemColorMap[itemColor.id] = itemColor;
                     itemColor.items.forEach((item: Item) => {
                         state.itemMap[item.id] = item;
@@ -136,7 +134,7 @@ const itemsSlice = createSlice({
             }
 
             state.filteredItems = Object.values(state.groupedItemMap).map((item: GroupedItem) => JSON.parse(JSON.stringify(item))).filter((groupedItem: GroupedItem) => {
-                groupedItem.colors = groupedItem.colors.filter((itemColor: ItemColor) => {
+                groupedItem.itemColors = groupedItem.itemColors.filter((itemColor: ItemColor) => {
                     let unfilteredColor = true;
                     state.filters.forEach((filter: ItemFilter) => {
                         switch (filter.key) {
@@ -165,7 +163,7 @@ const itemsSlice = createSlice({
                     return unfilteredColor;
                 });
 
-                if (groupedItem.colors.length === 0) {
+                if (groupedItem.itemColors.length === 0) {
                     return false;
                 }
 

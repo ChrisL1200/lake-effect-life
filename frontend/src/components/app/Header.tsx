@@ -37,7 +37,7 @@ const Header: React.FC = () => {
                     />
                 </div>
 
-                <div className="relative ml-auto mr-2" onClick={handleLoginClick}>
+                <div className="relative ml-auto mr-4" onClick={handleLoginClick}>
                     <PersonIcon className="h-8 w-8 text-gray-600" />
                 </div>
 

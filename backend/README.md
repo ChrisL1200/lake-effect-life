@@ -14,3 +14,13 @@ docker exec -it lel-postgres psql -U lel_user -d lel_db
 ```
 npx ts-node scripts/sync.ts
 ```
+
+### Add Migration
+```
+npx sequelize-cli db:migrate
+```
+
+### Undo Migration
+```
+npx sequelize-cli db:migrate:undo
+```

@@ -20,7 +20,7 @@ const Cart: React.FC = () => {
         return reduxState.cart.cartItems.map((cartItem: CartItem) => {
             const item = reduxState.items.itemMap[cartItem.itemId];
             const groupedItem = reduxState.items.groupedItemMap[cartItem.groupedItemId];
-            const itemColor = groupedItem.colors.find((itemColor: ItemColor) => itemColor.id === cartItem.itemColorId)!;
+            const itemColor = groupedItem.itemColors.find((itemColor: ItemColor) => itemColor.id === cartItem.itemColorId)!;
 
             return {
                 item,
@@ -66,7 +66,7 @@ const Cart: React.FC = () => {
     };
 
     return (
-        <div className="mx-auto max-w-lg p-6">
+        <div className="p-6 mx-auto max-w-lg">
             <h1 className="text-2xl font-bold mb-4">Cart</h1>
 
             {populatedCartItems.length === 0 ? (

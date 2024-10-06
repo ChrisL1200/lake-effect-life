@@ -82,7 +82,7 @@ const itemGenerator = (index: number): GroupedItem => {
     const type = getRandomValue(typeList);
     const gender = getRandomValue(genderList);
     const id = `${gender} ${type} ${index}`;
-    const colors = getRandomSubarray(colorList).map((color: Color, colorIndex: number) => ({
+    const itemColors = getRandomSubarray(colorList).map((color: Color, colorIndex: number) => ({
         id: `${index}-${colorIndex}`,
         color,
         groupedItemId: id,
@@ -92,7 +92,7 @@ const itemGenerator = (index: number): GroupedItem => {
         }))
     }));
 
-    return { id, type, gender, colors };
+    return { id, type, gender, itemColors };
 };
 
 const ITEMS_LENGTH = 50;
@@ -102,7 +102,7 @@ const getGroupedItems = async () => {
     //console.log(JSON.stringify(mockGroupItems));
     await new Promise((resolve) => setTimeout(resolve, 500));
     const response: AxiosResponse = await axios.get('http://localhost:3000/grouped-items');
-    return response.data.data; 
+    return true ? response.data.data : items; 
 };
 
 export default { getGroupedItems };

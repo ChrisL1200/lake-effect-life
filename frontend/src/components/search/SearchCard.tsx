@@ -20,7 +20,7 @@ const SearchCard: React.FC<Props> = (props: Props) => {
     const navigate = useNavigate();
 
     const [renderCarousel, setRenderCarousel] = useState<boolean>(true);
-    const [selectedItemColor, setSelectedItemColor] = useState<ItemColor>(groupedItem.colors[0]);
+    const [selectedItemColor, setSelectedItemColor] = useState<ItemColor>(groupedItem.itemColors[0]);
 
     const getPrice = () => {
         return selectedItemColor.items[0].price;
@@ -55,7 +55,7 @@ const SearchCard: React.FC<Props> = (props: Props) => {
                 }
             </CardHeader>
             <CardBody className="p-4">
-                <ColorSelector colors={groupedItem.colors} selectedColor={selectedItemColor} setSelectedColor={setSelectedColor}></ColorSelector>
+                <ColorSelector colors={groupedItem.itemColors} selectedColor={selectedItemColor} setSelectedColor={setSelectedColor}></ColorSelector>
                 <Typography variant="h6" color="blue-gray" className="truncate mb-2">
                     <a onClick={handleClick}>{groupedItem.id}</a>
                 </Typography>

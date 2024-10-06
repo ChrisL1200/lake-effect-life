@@ -61,8 +61,8 @@ Item.init({
 });
 
 // Associations
-ItemColor.hasMany(Item, { foreignKey: 'itemColorId' });
-Item.belongsTo(ItemColor, { foreignKey: 'itemColorId' });
+ItemColor.hasMany(Item, { as: 'items', foreignKey: 'itemColorId' });
+Item.belongsTo(ItemColor, { as: 'itemColor', foreignKey: 'itemColorId' });
 
 export default Item;
 
