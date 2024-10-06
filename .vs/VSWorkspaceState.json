@@ -1,16 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
-    "\\public\\images",
     "\\src",
+    "\\src\\api",
     "\\src\\components",
-    "\\src\\components\\cart",
-    "\\src\\components\\common",
-    "\\src\\components\\home",
-    "\\src\\components\\search",
+    "\\src\\components\\app",
+    "\\src\\models",
     "\\src\\store"
   ],
-  "SelectedNode": "\\src\\components\\home\\Home.tsx",
+  "SelectedNode": "\\src\\api\\item.ts",
   "PreviewInSolutionExplorer": false
 }

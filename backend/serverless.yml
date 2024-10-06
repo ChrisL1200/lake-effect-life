@@ -1,0 +1,37 @@
+service: lake-effect-life-api
+
+frameworkVersion: '4'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ${env:AWS_REGION}
+  environment:
+    DB_HOST: ${env:DB_HOST}
+    DB_USER: ${env:DB_USER}
+    DB_PASSWORD: ${env:DB_PASSWORD}
+    DB_NAME: ${env:DB_NAME}
+    COGNITO_USER_POOL_ID: ${env:COGNITO_USER_POOL_ID}
+    COGNITO_CLIENT_ID: ${env:COGNITO_CLIENT_ID}
+    S3_BUCKET: ${env:S3_BUCKET}
+    AWS_REGION: ${env:AWS_REGION}
+
+functions:
+  app:
+    handler: handler.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+    timeout: 30
+    memorySize: 512
+
+plugins:
+  - serverless-offline
+
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - .git/**
+
+
