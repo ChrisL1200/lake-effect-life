@@ -8,7 +8,12 @@
         "id": "0-0",
         "color": "Blue",
         "groupedItemId": "Kids Hoodie 0",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -37,7 +42,7 @@
         "id": "0-1",
         "color": "Green",
         "groupedItemId": "Kids Hoodie 0",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "XXL",
@@ -73,7 +78,10 @@
         "id": "0-2",
         "color": "Orange",
         "groupedItemId": "Kids Hoodie 0",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -88,7 +96,10 @@
         "id": "0-3",
         "color": "Yellow",
         "groupedItemId": "Kids Hoodie 0",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -110,7 +121,12 @@
         "id": "0-4",
         "color": "Purple",
         "groupedItemId": "Kids Hoodie 0",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -160,7 +176,11 @@
         "id": "1-0",
         "color": "Yellow",
         "groupedItemId": "Men Hoodie 1",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -182,7 +202,11 @@
         "id": "1-1",
         "color": "Orange",
         "groupedItemId": "Men Hoodie 1",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -232,7 +256,10 @@
         "id": "2-0",
         "color": "Purple",
         "groupedItemId": "Kids T-Shirt 2",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -247,7 +274,10 @@
         "id": "2-1",
         "color": "Orange",
         "groupedItemId": "Kids T-Shirt 2",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -283,7 +313,7 @@
         "id": "2-2",
         "color": "Red",
         "groupedItemId": "Kids T-Shirt 2",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -305,7 +335,7 @@
         "id": "2-3",
         "color": "Green",
         "groupedItemId": "Kids T-Shirt 2",
-        "imgUrls": [ "bills-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -327,7 +357,12 @@
         "id": "2-4",
         "color": "Yellow",
         "groupedItemId": "Kids T-Shirt 2",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -370,7 +405,7 @@
         "id": "3-0",
         "color": "Orange",
         "groupedItemId": "Kids Jacket 3",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "L",
@@ -399,7 +434,11 @@
         "id": "3-1",
         "color": "Green",
         "groupedItemId": "Kids Jacket 3",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -414,7 +453,10 @@
         "id": "3-2",
         "color": "Purple",
         "groupedItemId": "Kids Jacket 3",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -450,7 +492,7 @@
         "id": "4-0",
         "color": "Blue",
         "groupedItemId": "Men Tank Top 4",
-        "imgUrls": [ "bills-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg"],
         "items": [
           {
             "size": "S",
@@ -486,7 +528,11 @@
         "id": "4-1",
         "color": "Orange",
         "groupedItemId": "Men Tank Top 4",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -522,7 +568,10 @@
         "id": "4-2",
         "color": "Red",
         "groupedItemId": "Men Tank Top 4",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -551,7 +600,7 @@
         "id": "4-3",
         "color": "Green",
         "groupedItemId": "Men Tank Top 4",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -587,7 +636,11 @@
         "id": "4-4",
         "color": "Yellow",
         "groupedItemId": "Men Tank Top 4",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -630,7 +683,7 @@
         "id": "4-5",
         "color": "Purple",
         "groupedItemId": "Men Tank Top 4",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -673,7 +726,11 @@
         "id": "5-0",
         "color": "Green",
         "groupedItemId": "Kids Sweatshirt 5",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -695,7 +752,7 @@
         "id": "5-1",
         "color": "Purple",
         "groupedItemId": "Kids Sweatshirt 5",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -738,7 +795,11 @@
         "id": "5-2",
         "color": "Red",
         "groupedItemId": "Kids Sweatshirt 5",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -760,7 +821,12 @@
         "id": "6-0",
         "color": "Blue",
         "groupedItemId": "Kids T-Shirt 6",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -803,7 +869,11 @@
         "id": "6-1",
         "color": "Green",
         "groupedItemId": "Kids T-Shirt 6",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -818,7 +888,7 @@
         "id": "6-2",
         "color": "Yellow",
         "groupedItemId": "Kids T-Shirt 6",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -847,7 +917,11 @@
         "id": "7-0",
         "color": "Red",
         "groupedItemId": "Women Sweatshirt 7",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -869,7 +943,10 @@
         "id": "7-1",
         "color": "Green",
         "groupedItemId": "Women Sweatshirt 7",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -891,7 +968,10 @@
         "id": "8-0",
         "color": "Red",
         "groupedItemId": "Women Jacket 8",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -913,7 +993,7 @@
         "id": "8-1",
         "color": "Blue",
         "groupedItemId": "Women Jacket 8",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-navy-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -928,7 +1008,12 @@
         "id": "8-2",
         "color": "Orange",
         "groupedItemId": "Women Jacket 8",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -964,7 +1049,7 @@
         "id": "8-3",
         "color": "Green",
         "groupedItemId": "Women Jacket 8",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "L",
@@ -1007,7 +1092,7 @@
         "id": "9-0",
         "color": "Purple",
         "groupedItemId": "Kids T-Shirt 9",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "S",
@@ -1043,7 +1128,7 @@
         "id": "9-1",
         "color": "Orange",
         "groupedItemId": "Kids T-Shirt 9",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "S",
@@ -1072,7 +1157,7 @@
         "id": "9-2",
         "color": "Red",
         "groupedItemId": "Kids T-Shirt 9",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -1087,7 +1172,7 @@
         "id": "9-3",
         "color": "Blue",
         "groupedItemId": "Kids T-Shirt 9",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "L",
@@ -1102,7 +1187,12 @@
         "id": "9-4",
         "color": "Yellow",
         "groupedItemId": "Kids T-Shirt 9",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -1117,7 +1207,12 @@
         "id": "9-5",
         "color": "Green",
         "groupedItemId": "Kids T-Shirt 9",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -1146,7 +1241,11 @@
         "id": "10-0",
         "color": "Green",
         "groupedItemId": "Men Jacket 10",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -1175,7 +1274,12 @@
         "id": "10-1",
         "color": "Purple",
         "groupedItemId": "Men Jacket 10",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -1204,7 +1308,11 @@
         "id": "10-2",
         "color": "Red",
         "groupedItemId": "Men Jacket 10",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -1226,7 +1334,7 @@
         "id": "11-0",
         "color": "Blue",
         "groupedItemId": "Women Hoodie 11",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg"],
         "items": [
           {
             "size": "XXL",
@@ -1269,7 +1377,11 @@
         "id": "11-1",
         "color": "Red",
         "groupedItemId": "Women Hoodie 11",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -1298,7 +1410,12 @@
         "id": "12-0",
         "color": "Green",
         "groupedItemId": "Men Hoodie 12",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -1334,7 +1451,7 @@
         "id": "12-1",
         "color": "Orange",
         "groupedItemId": "Men Hoodie 12",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-navy-t-shirt.jpg"],
         "items": [
           {
             "size": "XXL",
@@ -1363,7 +1480,7 @@
         "id": "12-2",
         "color": "Yellow",
         "groupedItemId": "Men Hoodie 12",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -1406,7 +1523,11 @@
         "id": "12-3",
         "color": "Purple",
         "groupedItemId": "Men Hoodie 12",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -1456,7 +1577,12 @@
         "id": "13-0",
         "color": "Orange",
         "groupedItemId": "Women Long Sleeve 13",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -1485,7 +1611,11 @@
         "id": "13-1",
         "color": "Blue",
         "groupedItemId": "Women Long Sleeve 13",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -1507,7 +1637,12 @@
         "id": "13-2",
         "color": "Purple",
         "groupedItemId": "Women Long Sleeve 13",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -1557,7 +1692,11 @@
         "id": "14-0",
         "color": "Orange",
         "groupedItemId": "Kids Hoodie 14",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -1586,7 +1725,12 @@
         "id": "14-1",
         "color": "Green",
         "groupedItemId": "Kids Hoodie 14",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -1636,7 +1780,7 @@
         "id": "15-0",
         "color": "Yellow",
         "groupedItemId": "Women Hoodie 15",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-navy-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -1665,7 +1809,7 @@
         "id": "15-1",
         "color": "Red",
         "groupedItemId": "Women Hoodie 15",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -1687,7 +1831,12 @@
         "id": "15-2",
         "color": "Orange",
         "groupedItemId": "Women Hoodie 15",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -1702,7 +1851,12 @@
         "id": "15-3",
         "color": "Green",
         "groupedItemId": "Women Hoodie 15",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -1745,7 +1899,12 @@
         "id": "16-0",
         "color": "Yellow",
         "groupedItemId": "Men Sweatshirt 16",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -1767,7 +1926,7 @@
         "id": "17-0",
         "color": "Red",
         "groupedItemId": "Women Long Sleeve 17",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "L",
@@ -1789,7 +1948,7 @@
         "id": "17-1",
         "color": "Blue",
         "groupedItemId": "Women Long Sleeve 17",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-navy-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -1825,7 +1984,11 @@
         "id": "17-2",
         "color": "Purple",
         "groupedItemId": "Women Long Sleeve 17",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -1861,7 +2024,12 @@
         "id": "17-3",
         "color": "Orange",
         "groupedItemId": "Women Long Sleeve 17",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -1890,7 +2058,12 @@
         "id": "17-4",
         "color": "Yellow",
         "groupedItemId": "Women Long Sleeve 17",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -1919,7 +2092,11 @@
         "id": "17-5",
         "color": "Green",
         "groupedItemId": "Women Long Sleeve 17",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -1962,7 +2139,11 @@
         "id": "18-0",
         "color": "Orange",
         "groupedItemId": "Women Tank Top 18",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -1998,7 +2179,7 @@
         "id": "18-1",
         "color": "Red",
         "groupedItemId": "Women Tank Top 18",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "XXL",
@@ -2020,7 +2201,11 @@
         "id": "18-2",
         "color": "Yellow",
         "groupedItemId": "Women Tank Top 18",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -2049,7 +2234,12 @@
         "id": "18-3",
         "color": "Purple",
         "groupedItemId": "Women Tank Top 18",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -2085,7 +2275,10 @@
         "id": "18-4",
         "color": "Blue",
         "groupedItemId": "Women Tank Top 18",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -2121,7 +2314,7 @@
         "id": "18-5",
         "color": "Green",
         "groupedItemId": "Women Tank Top 18",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -2143,7 +2336,7 @@
         "id": "19-0",
         "color": "Yellow",
         "groupedItemId": "Men Tank Top 19",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "S",
@@ -2165,7 +2358,10 @@
         "id": "20-0",
         "color": "Red",
         "groupedItemId": "Women T-Shirt 20",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -2201,7 +2397,11 @@
         "id": "20-1",
         "color": "Yellow",
         "groupedItemId": "Women T-Shirt 20",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -2216,7 +2416,7 @@
         "id": "20-2",
         "color": "Green",
         "groupedItemId": "Women T-Shirt 20",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "L",
@@ -2252,7 +2452,12 @@
         "id": "20-3",
         "color": "Purple",
         "groupedItemId": "Women T-Shirt 20",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -2267,7 +2472,7 @@
         "id": "20-4",
         "color": "Orange",
         "groupedItemId": "Women T-Shirt 20",
-        "imgUrls": [ "bills-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg"],
         "items": [
           {
             "size": "S",
@@ -2310,7 +2515,10 @@
         "id": "21-0",
         "color": "Blue",
         "groupedItemId": "Kids Jacket 21",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -2346,7 +2554,11 @@
         "id": "21-1",
         "color": "Orange",
         "groupedItemId": "Kids Jacket 21",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -2368,7 +2580,7 @@
         "id": "21-2",
         "color": "Yellow",
         "groupedItemId": "Kids Jacket 21",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "S",
@@ -2383,7 +2595,7 @@
         "id": "21-3",
         "color": "Red",
         "groupedItemId": "Kids Jacket 21",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -2419,7 +2631,10 @@
         "id": "21-4",
         "color": "Green",
         "groupedItemId": "Kids Jacket 21",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -2434,7 +2649,7 @@
         "id": "21-5",
         "color": "Purple",
         "groupedItemId": "Kids Jacket 21",
-        "imgUrls": [ "bills-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -2470,7 +2685,7 @@
         "id": "22-0",
         "color": "Blue",
         "groupedItemId": "Women T-Shirt 22",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -2520,7 +2735,7 @@
         "id": "23-0",
         "color": "Purple",
         "groupedItemId": "Men Long Sleeve 23",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "S",
@@ -2563,7 +2778,7 @@
         "id": "24-0",
         "color": "Blue",
         "groupedItemId": "Women Tank Top 24",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg"],
         "items": [
           {
             "size": "S",
@@ -2606,7 +2821,7 @@
         "id": "24-1",
         "color": "Purple",
         "groupedItemId": "Women Tank Top 24",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "L",
@@ -2621,7 +2836,11 @@
         "id": "24-2",
         "color": "Yellow",
         "groupedItemId": "Women Tank Top 24",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -2664,7 +2883,7 @@
         "id": "24-3",
         "color": "Red",
         "groupedItemId": "Women Tank Top 24",
-        "imgUrls": [ "bills-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg"],
         "items": [
           {
             "size": "XXL",
@@ -2686,7 +2905,11 @@
         "id": "25-0",
         "color": "Red",
         "groupedItemId": "Kids T-Shirt 25",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -2715,7 +2938,11 @@
         "id": "25-1",
         "color": "Orange",
         "groupedItemId": "Kids T-Shirt 25",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -2737,7 +2964,11 @@
         "id": "25-2",
         "color": "Blue",
         "groupedItemId": "Kids T-Shirt 25",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -2773,7 +3004,7 @@
         "id": "25-3",
         "color": "Yellow",
         "groupedItemId": "Kids T-Shirt 25",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-navy-t-shirt.jpg"],
         "items": [
           {
             "size": "XXL",
@@ -2802,7 +3033,11 @@
         "id": "25-4",
         "color": "Green",
         "groupedItemId": "Kids T-Shirt 25",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -2852,7 +3087,11 @@
         "id": "26-0",
         "color": "Orange",
         "groupedItemId": "Men Tank Top 26",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -2867,7 +3106,11 @@
         "id": "26-1",
         "color": "Yellow",
         "groupedItemId": "Men Tank Top 26",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -2896,7 +3139,11 @@
         "id": "26-2",
         "color": "Blue",
         "groupedItemId": "Men Tank Top 26",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -2925,7 +3172,12 @@
         "id": "27-0",
         "color": "Orange",
         "groupedItemId": "Men T-Shirt 27",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -2954,7 +3206,11 @@
         "id": "27-1",
         "color": "Blue",
         "groupedItemId": "Men T-Shirt 27",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -2997,7 +3253,12 @@
         "id": "27-2",
         "color": "Red",
         "groupedItemId": "Men T-Shirt 27",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -3026,7 +3287,11 @@
         "id": "27-3",
         "color": "Green",
         "groupedItemId": "Men T-Shirt 27",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -3069,7 +3334,7 @@
         "id": "27-4",
         "color": "Yellow",
         "groupedItemId": "Men T-Shirt 27",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "XXL",
@@ -3091,7 +3356,7 @@
         "id": "27-5",
         "color": "Purple",
         "groupedItemId": "Men T-Shirt 27",
-        "imgUrls": [ "bills-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg"],
         "items": [
           {
             "size": "XXL",
@@ -3120,7 +3385,7 @@
         "id": "28-0",
         "color": "Purple",
         "groupedItemId": "Men Hoodie 28",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg"],
         "items": [
           {
             "size": "XXL",
@@ -3149,7 +3414,12 @@
         "id": "28-1",
         "color": "Orange",
         "groupedItemId": "Men Hoodie 28",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -3171,7 +3441,12 @@
         "id": "28-2",
         "color": "Yellow",
         "groupedItemId": "Men Hoodie 28",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -3214,7 +3489,7 @@
         "id": "29-0",
         "color": "Red",
         "groupedItemId": "Men Sweatshirt 29",
-        "imgUrls": [ "bills-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg"],
         "items": [
           {
             "size": "L",
@@ -3250,7 +3525,12 @@
         "id": "29-1",
         "color": "Blue",
         "groupedItemId": "Men Sweatshirt 29",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -3279,7 +3559,10 @@
         "id": "29-2",
         "color": "Yellow",
         "groupedItemId": "Men Sweatshirt 29",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -3308,7 +3591,11 @@
         "id": "29-3",
         "color": "Purple",
         "groupedItemId": "Men Sweatshirt 29",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -3351,7 +3638,10 @@
         "id": "30-0",
         "color": "Yellow",
         "groupedItemId": "Women Tank Top 30",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -3394,7 +3684,7 @@
         "id": "30-1",
         "color": "Red",
         "groupedItemId": "Women Tank Top 30",
-        "imgUrls": [ "bills-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -3437,7 +3727,12 @@
         "id": "30-2",
         "color": "Green",
         "groupedItemId": "Women Tank Top 30",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -3459,7 +3754,12 @@
         "id": "30-3",
         "color": "Orange",
         "groupedItemId": "Women Tank Top 30",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -3495,7 +3795,10 @@
         "id": "31-0",
         "color": "Yellow",
         "groupedItemId": "Women Sweatshirt 31",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -3538,7 +3841,7 @@
         "id": "31-1",
         "color": "Red",
         "groupedItemId": "Women Sweatshirt 31",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -3560,7 +3863,11 @@
         "id": "32-0",
         "color": "Blue",
         "groupedItemId": "Men T-Shirt 32",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -3596,7 +3903,7 @@
         "id": "32-1",
         "color": "Green",
         "groupedItemId": "Men T-Shirt 32",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-navy-t-shirt.jpg"],
         "items": [
           {
             "size": "S",
@@ -3618,7 +3925,12 @@
         "id": "32-2",
         "color": "Purple",
         "groupedItemId": "Men T-Shirt 32",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -3647,7 +3959,11 @@
         "id": "32-3",
         "color": "Red",
         "groupedItemId": "Men T-Shirt 32",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -3697,7 +4013,7 @@
         "id": "33-0",
         "color": "Blue",
         "groupedItemId": "Men T-Shirt 33",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -3747,7 +4063,11 @@
         "id": "34-0",
         "color": "Yellow",
         "groupedItemId": "Men Hoodie 34",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -3769,7 +4089,12 @@
         "id": "34-1",
         "color": "Red",
         "groupedItemId": "Men Hoodie 34",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -3812,7 +4137,11 @@
         "id": "34-2",
         "color": "Blue",
         "groupedItemId": "Men Hoodie 34",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -3848,7 +4177,11 @@
         "id": "34-3",
         "color": "Orange",
         "groupedItemId": "Men Hoodie 34",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -3898,7 +4231,12 @@
         "id": "35-0",
         "color": "Yellow",
         "groupedItemId": "Men Tank Top 35",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -3941,7 +4279,12 @@
         "id": "36-0",
         "color": "Yellow",
         "groupedItemId": "Kids Tank Top 36",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -3963,7 +4306,11 @@
         "id": "36-1",
         "color": "Orange",
         "groupedItemId": "Kids Tank Top 36",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -3999,7 +4346,10 @@
         "id": "37-0",
         "color": "Red",
         "groupedItemId": "Women Hoodie 37",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -4035,7 +4385,11 @@
         "id": "37-1",
         "color": "Orange",
         "groupedItemId": "Women Hoodie 37",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -4050,7 +4404,11 @@
         "id": "37-2",
         "color": "Blue",
         "groupedItemId": "Women Hoodie 37",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -4065,7 +4423,11 @@
         "id": "37-3",
         "color": "Yellow",
         "groupedItemId": "Women Hoodie 37",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -4080,7 +4442,12 @@
         "id": "37-4",
         "color": "Green",
         "groupedItemId": "Women Hoodie 37",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -4116,7 +4483,10 @@
         "id": "38-0",
         "color": "Orange",
         "groupedItemId": "Men Tank Top 38",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -4159,7 +4529,7 @@
         "id": "38-1",
         "color": "Green",
         "groupedItemId": "Men Tank Top 38",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -4181,7 +4551,12 @@
         "id": "39-0",
         "color": "Orange",
         "groupedItemId": "Women Jacket 39",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -4217,7 +4592,11 @@
         "id": "39-1",
         "color": "Blue",
         "groupedItemId": "Women Jacket 39",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -4239,7 +4618,12 @@
         "id": "39-2",
         "color": "Purple",
         "groupedItemId": "Women Jacket 39",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -4268,7 +4652,12 @@
         "id": "39-3",
         "color": "Yellow",
         "groupedItemId": "Women Jacket 39",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -4311,7 +4700,12 @@
         "id": "39-4",
         "color": "Red",
         "groupedItemId": "Women Jacket 39",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -4333,7 +4727,12 @@
         "id": "40-0",
         "color": "Green",
         "groupedItemId": "Men Hoodie 40",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -4376,7 +4775,11 @@
         "id": "40-1",
         "color": "Red",
         "groupedItemId": "Men Hoodie 40",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -4405,7 +4808,7 @@
         "id": "40-2",
         "color": "Yellow",
         "groupedItemId": "Men Hoodie 40",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-navy-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -4448,7 +4851,12 @@
         "id": "40-3",
         "color": "Purple",
         "groupedItemId": "Men Hoodie 40",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -4491,7 +4899,7 @@
         "id": "41-0",
         "color": "Orange",
         "groupedItemId": "Women Hoodie 41",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -4527,7 +4935,11 @@
         "id": "42-0",
         "color": "Purple",
         "groupedItemId": "Women Long Sleeve 42",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -4556,7 +4968,12 @@
         "id": "42-1",
         "color": "Orange",
         "groupedItemId": "Women Long Sleeve 42",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -4599,7 +5016,11 @@
         "id": "42-2",
         "color": "Yellow",
         "groupedItemId": "Women Long Sleeve 42",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -4614,7 +5035,12 @@
         "id": "42-3",
         "color": "Blue",
         "groupedItemId": "Women Long Sleeve 42",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -4650,7 +5076,10 @@
         "id": "43-0",
         "color": "Red",
         "groupedItemId": "Kids Long Sleeve 43",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -4686,7 +5115,7 @@
         "id": "43-1",
         "color": "Green",
         "groupedItemId": "Kids Long Sleeve 43",
-        "imgUrls": [ "bills-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg"],
         "items": [
           {
             "size": "S",
@@ -4722,7 +5151,7 @@
         "id": "43-2",
         "color": "Yellow",
         "groupedItemId": "Kids Long Sleeve 43",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -4751,7 +5180,12 @@
         "id": "43-3",
         "color": "Purple",
         "groupedItemId": "Kids Long Sleeve 43",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -4787,7 +5221,12 @@
         "id": "43-4",
         "color": "Orange",
         "groupedItemId": "Kids Long Sleeve 43",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -4816,7 +5255,12 @@
         "id": "43-5",
         "color": "Blue",
         "groupedItemId": "Kids Long Sleeve 43",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -4866,7 +5310,7 @@
         "id": "44-0",
         "color": "Green",
         "groupedItemId": "Men T-Shirt 44",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -4916,7 +5360,7 @@
         "id": "45-0",
         "color": "Green",
         "groupedItemId": "Kids Hoodie 45",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg", "bills-t-shirt.jpg"],
         "items": [
           {
             "size": "M",
@@ -4945,7 +5389,11 @@
         "id": "45-1",
         "color": "Blue",
         "groupedItemId": "Kids Hoodie 45",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -4981,7 +5429,7 @@
         "id": "45-2",
         "color": "Yellow",
         "groupedItemId": "Kids Hoodie 45",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg"],
         "items": [
           {
             "size": "XXL",
@@ -5024,7 +5472,11 @@
         "id": "45-3",
         "color": "Red",
         "groupedItemId": "Kids Hoodie 45",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -5046,7 +5498,12 @@
         "id": "45-4",
         "color": "Orange",
         "groupedItemId": "Kids Hoodie 45",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -5075,7 +5532,7 @@
         "id": "45-5",
         "color": "Purple",
         "groupedItemId": "Kids Hoodie 45",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg"],
         "items": [
           {
             "size": "L",
@@ -5111,7 +5568,12 @@
         "id": "46-0",
         "color": "Orange",
         "groupedItemId": "Women Long Sleeve 46",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "M",
@@ -5154,7 +5616,12 @@
         "id": "47-0",
         "color": "Purple",
         "groupedItemId": "Women Tank Top 47",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "bills-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "bills-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "S",
@@ -5190,7 +5657,11 @@
         "id": "48-0",
         "color": "Red",
         "groupedItemId": "Kids T-Shirt 48",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XXL",
@@ -5233,7 +5704,7 @@
         "id": "48-1",
         "color": "Blue",
         "groupedItemId": "Kids T-Shirt 48",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-white-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -5255,7 +5726,7 @@
         "id": "48-2",
         "color": "Green",
         "groupedItemId": "Kids T-Shirt 48",
-        "imgUrls": [ "bills-t-shirt.jpg" ],
+        "imgUrls": ["bills-t-shirt.jpg"],
         "items": [
           {
             "size": "XL",
@@ -5291,7 +5762,7 @@
         "id": "48-3",
         "color": "Orange",
         "groupedItemId": "Kids T-Shirt 48",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": ["great-lakes-mens-navy-t-shirt.jpg"],
         "items": [
           {
             "size": "XXL",
@@ -5320,7 +5791,12 @@
         "id": "49-0",
         "color": "Purple",
         "groupedItemId": "Men Hoodie 49",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -5342,7 +5818,11 @@
         "id": "49-1",
         "color": "Blue",
         "groupedItemId": "Men Hoodie 49",
-        "imgUrls": [ "bills-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "bills-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -5385,7 +5865,10 @@
         "id": "49-2",
         "color": "Yellow",
         "groupedItemId": "Men Hoodie 49",
-        "imgUrls": [ "great-lakes-mens-white-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-white-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "L",
@@ -5421,7 +5904,11 @@
         "id": "49-3",
         "color": "Green",
         "groupedItemId": "Men Hoodie 49",
-        "imgUrls": [ "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",
@@ -5464,7 +5951,11 @@
         "id": "49-4",
         "color": "Orange",
         "groupedItemId": "Men Hoodie 49",
-        "imgUrls": [ "great-lakes-mens-t-shirt.jpg", "great-lakes-mens-navy-t-shirt.jpg", "great-lakes-mens-white-t-shirt.jpg" ],
+        "imgUrls": [
+          "great-lakes-mens-t-shirt.jpg",
+          "great-lakes-mens-navy-t-shirt.jpg",
+          "great-lakes-mens-white-t-shirt.jpg"
+        ],
         "items": [
           {
             "size": "XL",

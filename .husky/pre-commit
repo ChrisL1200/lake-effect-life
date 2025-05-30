@@ -1,0 +1,17 @@
+me "$0")/_/husky.sh"
+
+npx lint-staged
+
+# Type-check frontend
+cd frontend && npm run typecheck
+if [ $? -ne 0 ]; then
+  exit 1
+fi
+cd ..
+
+# Type-check backend
+cd backend && npm run typecheck
+if [ $? -ne 0 ]; then
+  exit 1
+fi
+cd ..

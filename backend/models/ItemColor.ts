@@ -1,63 +1,75 @@
-import { DataTypes, Model, Optional } from 'sequelize';
-import sequelize from './index';
-import GroupedItem from './GroupedItem';
+import { DataTypes, Model, Optional } from "sequelize";
+import sequelize from "./index";
+import GroupedItem from "./GroupedItem";
 
 export enum Color {
-    BLUE = "Blue",
-    RED = "Red",
-    ORANGE = "Orange",
-    YELLOW = "Yellow",
-    GREEN = "Green",
-    PURPLE = "Purple"
+  BLUE = "Blue",
+  RED = "Red",
+  ORANGE = "Orange",
+  YELLOW = "Yellow",
+  GREEN = "Green",
+  PURPLE = "Purple",
 }
 
 interface ItemColorAttributes {
-    id: string;
-    color: Color;
-    groupedItemId?: string;
-    imgUrls: string[];
+  id: string;
+  color: Color;
+  groupedItemId?: string;
+  imgUrls: string[];
 }
 
-interface ItemColorCreationAttributes extends Optional<ItemColorAttributes, 'id'> {}
+interface ItemColorCreationAttributes
+  extends Optional<ItemColorAttributes, "id"> {}
 
-class ItemColor extends Model<ItemColorAttributes, ItemColorCreationAttributes> implements ItemColorAttributes {
-    public id!: string;
-    public color!: Color;
-    public groupedItemId?: string;
-    public imgUrls!: string[];
+class ItemColor
+  extends Model<ItemColorAttributes, ItemColorCreationAttributes>
+  implements ItemColorAttributes
+{
+  public id!: string;
+  public color!: Color;
+  public groupedItemId?: string;
+  public imgUrls!: string[];
 }
 
-ItemColor.init({
+ItemColor.init(
+  {
     id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
     },
     color: {
-        type: DataTypes.ENUM(...Object.values(Color)),
-        allowNull: false,
+      type: DataTypes.ENUM(...Object.values(Color)),
+      allowNull: false,
     },
     groupedItemId: {
-        type: DataTypes.STRING,
-        references: {
-            model: GroupedItem,
-            key: 'id',
-        },
+      type: DataTypes.STRING,
+      references: {
+        model: GroupedItem,
+        key: "id",
+      },
     },
     imgUrls: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
-        allowNull: false,
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: false,
     },
-}, {
+  },
+  {
     sequelize,
-    modelName: 'ItemColor',
-    tableName: 'item_colors',
+    modelName: "ItemColor",
+    tableName: "item_colors",
     timestamps: true,
-});
+  },
+);
 
 // Associations
-GroupedItem.hasMany(ItemColor, { as: 'itemColors', foreignKey: 'groupedItemId' });
-ItemColor.belongsTo(GroupedItem, { as: 'groupedItem', foreignKey: 'groupedItemId' });
+GroupedItem.hasMany(ItemColor, {
+  as: "itemColors",
+  foreignKey: "groupedItemId",
+});
+ItemColor.belongsTo(GroupedItem, {
+  as: "groupedItem",
+  foreignKey: "groupedItemId",
+});
 
 export default ItemColor;
-

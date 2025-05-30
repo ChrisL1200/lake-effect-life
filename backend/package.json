@@ -1,9 +1,13 @@
 {
   "scripts": {
     "start:serverless": "serverless offline",
-    "start": "ts-node-dev app.ts"
+    "start": "ts-node-dev app.ts",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "format": "prettier --check .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@codegenie/serverless-express": "^4.15.0",
     "@types/node": "^22.7.4",
     "aws-sdk": "^2.1691.0",
     "cors": "^2.8.5",
@@ -23,5 +27,11 @@
     "@types/multer": "^1.4.12",
     "serverless-offline": "^14.3.2",
     "ts-node-dev": "^2.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

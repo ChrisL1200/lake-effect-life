@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import { Button, Input } from "@material-tailwind/react";
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 // import FacebookLogin from 'react-facebook-login';
 
 const Login: React.FC = () => {
@@ -31,18 +31,22 @@ const Login: React.FC = () => {
         <form className="space-y-4 mb-4">
           <Input label="Email" size="lg" type="email" required />
           <Input label="Password" size="lg" type="password" required />
-          <Button fullWidth type="submit">Login</Button>
+          <Button fullWidth type="submit">
+            Login
+          </Button>
         </form>
 
         <div className="my-6 text-center">
           <span className="text-gray-500">Or login with</span>
         </div>
 
-        <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || ''}>
-            <GoogleLogin
-                onSuccess={handleGoogleSuccess}
-                onError={handleGoogleError}
-            />
+        <GoogleOAuthProvider
+          clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || ""}
+        >
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={handleGoogleError}
+          />
         </GoogleOAuthProvider>
 
         {/* Facebook Login 

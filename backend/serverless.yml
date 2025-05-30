@@ -1,6 +1,6 @@
 service: lake-effect-life-api
 
-frameworkVersion: '4'
+frameworkVersion: "4"
 
 provider:
   name: aws
@@ -21,9 +21,32 @@ functions:
     handler: handler.handler
     events:
       - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http: "ANY {proxy+}"
     timeout: 30
     memorySize: 512
+
+resources:
+  Resources:
+    MyPostgresDB:
+      Type: AWS::RDS::DBInstance
+      Properties:
+        DBInstanceClass: db.t3.micro
+        AllocatedStorage: 20
+        DBInstanceIdentifier: my-db
+        Engine: postgres
+        MasterUsername: admin
+        MasterUserPassword: !Ref MyDbPassword
+
+    MyDbPassword:
+      Type: AWS::SecretsManager::Secret
+      Properties:
+        Name: my-app-db-password
+        Description: Password for my Postgres RDS
+        GenerateSecretString:
+          SecretStringTemplate: '{"username": "admin"}'
+          GenerateStringKey: "password"
+          PasswordLength: 16
+          ExcludeCharacters: '"@/\\'
 
 plugins:
   - serverless-offline
@@ -33,5 +56,3 @@ package:
     - node_modules/**
     - .gitignore
     - .git/**
-
-

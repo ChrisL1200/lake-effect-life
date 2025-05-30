@@ -1,5 +1,4 @@
-import serverless from '@vendia/serverless-express';
-import app from './app';
+import serverless from "@codegenie/serverless-express";
+import app from "./app";
 
-export const handler = serverless(app);
-
+export const handler = serverless({ app });

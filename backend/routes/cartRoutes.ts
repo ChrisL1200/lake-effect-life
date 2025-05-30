@@ -1,6 +1,6 @@
-import { Router, Request, Response } from 'express';
-import Cart from '../models/Cart';
-import GroupedItem from '../models/GroupedItem';
+import { Router, Request, Response } from "express";
+import Cart from "../models/Cart";
+import GroupedItem from "../models/GroupedItem";
 
 const router = Router();
 
@@ -60,4 +60,3 @@ const router = Router();
 //});
 
 export default router;
-

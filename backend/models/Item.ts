@@ -1,68 +1,73 @@
-import { DataTypes, Model, Optional } from 'sequelize';
-import sequelize from './index';
-import ItemColor from './ItemColor';
+import { DataTypes, Model, Optional } from "sequelize";
+import sequelize from "./index";
+import ItemColor from "./ItemColor";
 
 export enum ItemSize {
-    SMALL = "S",
-    MEDIUM = "M",
-    LARGE = "L",
-    XLARGE = "XL",
-    XXLARGE = "XXL"
+  SMALL = "S",
+  MEDIUM = "M",
+  LARGE = "L",
+  XLARGE = "XL",
+  XXLARGE = "XXL",
 }
 
 interface ItemAttributes {
-    id: string;
-    price: number;
-    size: ItemSize;
-    inventory: number;
-    itemColorId?: string;
+  id: string;
+  price: number;
+  size: ItemSize;
+  inventory: number;
+  itemColorId?: string;
 }
 
-interface ItemCreationAttributes extends Optional<ItemAttributes, 'id'> {}
+interface ItemCreationAttributes extends Optional<ItemAttributes, "id"> {}
 
-class Item extends Model<ItemAttributes, ItemCreationAttributes> implements ItemAttributes {
-    public id!: string;
-    public price!: number;
-    public size!: ItemSize;
-    public inventory!: number;
-    public itemColorId?: string;
+class Item
+  extends Model<ItemAttributes, ItemCreationAttributes>
+  implements ItemAttributes
+{
+  public id!: string;
+  public price!: number;
+  public size!: ItemSize;
+  public inventory!: number;
+  public itemColorId?: string;
 }
 
-Item.init({
+Item.init(
+  {
     id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
     },
     price: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
+      type: DataTypes.FLOAT,
+      allowNull: false,
     },
     size: {
-        type: DataTypes.ENUM(...Object.values(ItemSize)),
-        allowNull: false,
+      type: DataTypes.ENUM(...Object.values(ItemSize)),
+      allowNull: false,
     },
     inventory: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     itemColorId: {
-        type: DataTypes.UUID,
-        references: {
-            model: ItemColor,
-            key: 'id',
-        },
+      type: DataTypes.UUID,
+      references: {
+        model: ItemColor,
+        key: "id",
+      },
     },
-}, {
+  },
+  {
     sequelize,
-    modelName: 'Item',
-    tableName: 'items',
+    modelName: "Item",
+    tableName: "items",
     timestamps: true,
-});
+  },
+);
 
 // Associations
-ItemColor.hasMany(Item, { as: 'items', foreignKey: 'itemColorId' });
-Item.belongsTo(ItemColor, { as: 'itemColor', foreignKey: 'itemColorId' });
+ItemColor.hasMany(Item, { as: "items", foreignKey: "itemColorId" });
+Item.belongsTo(ItemColor, { as: "itemColor", foreignKey: "itemColorId" });
 
 export default Item;
-

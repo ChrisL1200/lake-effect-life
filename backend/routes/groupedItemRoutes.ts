@@ -1,10 +1,10 @@
-import { Router, Request, Response } from 'express';
-import GroupedItem from '../models/GroupedItem';
-import ItemColor from '../models/ItemColor';
-import Item from '../models/Item';
-import multer from 'multer';
-import { uploadImage } from '../service/s3Service';
-import { Op } from 'sequelize';
+import { Router, Request, Response } from "express";
+import GroupedItem from "../models/GroupedItem";
+import ItemColor from "../models/ItemColor";
+import Item from "../models/Item";
+import multer from "multer";
+import { uploadImage } from "../service/s3Service";
+import { Op } from "sequelize";
 // import { authenticate } from '../middleware/auth';
 const router = Router();
 const storage = multer.memoryStorage();
@@ -35,38 +35,42 @@ const storage = multer.memoryStorage();
 //});
 
 // Read All GroupedItems with Search, Filter, Pagination
-router.get('/', async (req: Request, res: Response) => {
-    const { search, type, gender, page = 1, limit = 20 } = req.query;
+router.get("/", async (req: Request, res: Response) => {
+  const { search, type, gender, page = 1, limit = 20 } = req.query;
 
-    const where: any = {};
-    if (type) where.type = type;
-    if (gender) where.gender = gender;
-    if (search) where.type = { [Op.iLike]: `%${search}%` }; // Example search on type
+  const where: any = {};
+  if (type) where.type = type;
+  if (gender) where.gender = gender;
+  if (search) where.type = { [Op.iLike]: `%${search}%` }; // Example search on type
 
-    try {
-        const groupedItems = await GroupedItem.findAndCountAll({
-            where,
-            offset: (Number(page) - 1) * Number(limit),
-            limit: Number(limit),
-            include: [{
-                model: ItemColor,
-                as: 'itemColors',
-                include: [{
-                    model: Item,
-                    as: 'items'
-                }]
-            }],
-        });
-        res.status(200).json({
-            data: groupedItems.rows,
-            total: groupedItems.count,
-            page: Number(page),
-            pageSize: limit,
-            totalPages: Math.ceil(groupedItems.count / Number(limit)),
-        });
-    } catch (error: any) {
-        res.status(400).json({ error: error.message });
-    }
+  try {
+    const groupedItems = await GroupedItem.findAndCountAll({
+      where,
+      offset: (Number(page) - 1) * Number(limit),
+      limit: Number(limit),
+      include: [
+        {
+          model: ItemColor,
+          as: "itemColors",
+          include: [
+            {
+              model: Item,
+              as: "items",
+            },
+          ],
+        },
+      ],
+    });
+    res.status(200).json({
+      data: groupedItems.rows,
+      total: groupedItems.count,
+      page: Number(page),
+      pageSize: limit,
+      totalPages: Math.ceil(groupedItems.count / Number(limit)),
+    });
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
 });
 
 // Read Single GroupedItem
@@ -108,4 +112,3 @@ router.get('/', async (req: Request, res: Response) => {
 //});
 
 export default router;
-
