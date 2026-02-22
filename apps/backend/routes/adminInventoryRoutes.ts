@@ -1,5 +1,5 @@
 import { Request, Response, Router } from "express";
-import { Op, cast, col, where } from "sequelize";
+import { Op, QueryTypes, cast, col, where } from "sequelize";
 import GroupedItem from "../models/GroupedItem";
 import ItemColor from "../models/ItemColor";
 import Item from "../models/Item";
@@ -200,6 +200,142 @@ router.get("/", requireAdmin, async (req: Request, res: Response) => {
   }
 });
 
+router.get("/transactions", requireAdmin, async (req: Request, res: Response) => {
+  const page = parseInteger(req.query.page, 1);
+  const limit = Math.min(parseInteger(req.query.limit, 25), 100);
+  const search =
+    typeof req.query.search === "string" ? req.query.search.trim() : "";
+  const sortByRaw =
+    typeof req.query.sortBy === "string" ? req.query.sortBy : "createdAt";
+  const sortDirectionRaw =
+    typeof req.query.sortDirection === "string"
+      ? req.query.sortDirection.toUpperCase()
+      : "DESC";
+
+  const sortFieldMap: Record<string, string> = {
+    id: "im.id",
+    itemId: 'im."itemId"',
+    movementType: 'im."movementType"',
+    quantityDelta: 'im."quantityDelta"',
+    createdAt: 'im."createdAt"',
+    customerEmail: "c.email",
+    orderNumber: 'o."orderNumber"',
+    shipmentStatus: "sp.status",
+  };
+  const sortBy = Object.keys(sortFieldMap).includes(sortByRaw)
+    ? sortByRaw
+    : "createdAt";
+  const sortDirection = sortDirectionRaw === "ASC" ? "ASC" : "DESC";
+  const searchValue = search ? `%${search}%` : null;
+  const searchClause = search
+    ? `
+      WHERE (
+        im.id::text ILIKE :search
+        OR im."itemId"::text ILIKE :search
+        OR im."movementType"::text ILIKE :search
+        OR COALESCE(im.note, '') ILIKE :search
+        OR COALESCE(o."orderNumber", '') ILIKE :search
+        OR COALESCE(c.email, '') ILIKE :search
+        OR COALESCE(c."firstName", '') ILIKE :search
+        OR COALESCE(c."lastName", '') ILIKE :search
+        OR COALESCE(a.line1, '') ILIKE :search
+        OR COALESCE(a.city, '') ILIKE :search
+        OR COALESCE(a.state, '') ILIKE :search
+        OR COALESCE(sp.status, '') ILIKE :search
+        OR COALESCE(sp."trackingNumber", '') ILIKE :search
+      )
+    `
+    : "";
+
+  try {
+    const rows = (await sequelize.query(
+      `
+        SELECT
+          im.id,
+          im."itemId",
+          im."orderId",
+          im."movementType",
+          im."quantityDelta",
+          im.note,
+          im."createdAt",
+          im."updatedAt",
+          o."orderNumber",
+          o.status AS "orderStatus",
+          c.id AS "customerId",
+          c.email AS "customerEmail",
+          c."firstName" AS "customerFirstName",
+          c."lastName" AS "customerLastName",
+          c."isGuest" AS "customerIsGuest",
+          a.line1 AS "shippingLine1",
+          a.city AS "shippingCity",
+          a.state AS "shippingState",
+          a."postalCode" AS "shippingPostalCode",
+          a.country AS "shippingCountry",
+          sp.status AS "shipmentStatus",
+          sp."trackingNumber" AS "trackingNumber",
+          sp."shippedAt" AS "shippedAt",
+          sp."deliveredAt" AS "deliveredAt"
+        FROM inventory_movements im
+        LEFT JOIN orders o ON o.id = im."orderId"
+        LEFT JOIN customers c ON c.id = o."customerId"
+        LEFT JOIN addresses a ON a.id = o."shippingAddressId"
+        LEFT JOIN LATERAL (
+          SELECT s.status, s."trackingNumber", s."shippedAt", s."deliveredAt", s."createdAt"
+          FROM shipments s
+          WHERE s."orderId" = o.id
+          ORDER BY s."createdAt" DESC
+          LIMIT 1
+        ) sp ON TRUE
+        ${searchClause}
+        ORDER BY ${sortFieldMap[sortBy]} ${sortDirection}
+        LIMIT :limit OFFSET :offset
+      `,
+      {
+        replacements: {
+          search: searchValue,
+          limit,
+          offset: (page - 1) * limit,
+        },
+        type: QueryTypes.SELECT,
+      },
+    )) as any[];
+
+    const countResult = (await sequelize.query(
+      `
+        SELECT COUNT(*)::int AS total
+        FROM inventory_movements im
+        LEFT JOIN orders o ON o.id = im."orderId"
+        LEFT JOIN customers c ON c.id = o."customerId"
+        LEFT JOIN addresses a ON a.id = o."shippingAddressId"
+        LEFT JOIN LATERAL (
+          SELECT s.status, s."trackingNumber"
+          FROM shipments s
+          WHERE s."orderId" = o.id
+          ORDER BY s."createdAt" DESC
+          LIMIT 1
+        ) sp ON TRUE
+        ${searchClause}
+      `,
+      {
+        replacements: { search: searchValue },
+        type: QueryTypes.SELECT,
+      },
+    )) as Array<{ total: number }>;
+
+    const total = Number(countResult[0]?.total || 0);
+
+    return res.status(200).json({
+      data: rows,
+      total,
+      page,
+      pageSize: limit,
+      totalPages: Math.ceil(total / limit),
+    });
+  } catch (error: any) {
+    return res.status(400).json({ error: error.message });
+  }
+});
+
 router.get("/:id", requireAdmin, async (req: Request, res: Response) => {
   const routeId = getRouteId(req);
   try {
@@ -273,6 +409,7 @@ router.post("/", requireAdmin, async (req: Request, res: Response) => {
               itemColorId: itemColor.id,
               size: itemPayload.size,
               price: itemPayload.price,
+              inventory: itemPayload.inventory,
             },
             { transaction },
           );
@@ -378,6 +515,7 @@ router.put("/:id", requireAdmin, async (req: Request, res: Response) => {
               itemColorId: itemColor.id,
               size: itemPayload.size,
               price: itemPayload.price,
+              inventory: itemPayload.inventory,
             },
             { transaction },
           );

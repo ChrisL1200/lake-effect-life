@@ -9,11 +9,11 @@ interface ItemAttributes {
   id: string;
   price: number;
   size: ItemSize;
-  inventory?: number;
+  inventory: number;
   itemColorId?: string;
 }
 
-interface ItemCreationAttributes extends Optional<ItemAttributes, "id"> {}
+interface ItemCreationAttributes extends Optional<ItemAttributes, "id" | "inventory"> {}
 
 class Item
   extends Model<ItemAttributes, ItemCreationAttributes>
@@ -22,7 +22,7 @@ class Item
   public id!: string;
   public price!: number;
   public size!: ItemSize;
-  public inventory?: number;
+  public inventory!: number;
   public itemColorId?: string;
 }
 
@@ -46,13 +46,9 @@ Item.init(
       },
     },
     inventory: {
-      type: DataTypes.VIRTUAL(DataTypes.INTEGER),
-      get(this: Item) {
-        return this.getDataValue("inventory") ?? 0;
-      },
-      set(this: Item, value: number) {
-        this.setDataValue("inventory", value);
-      },
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
     },
     itemColorId: {
       type: DataTypes.UUID,

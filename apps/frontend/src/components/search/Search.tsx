@@ -1,19 +1,20 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { RootState } from "../../store";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Drawer, Button } from "@material-tailwind/react";
 import SearchFilters from "./SearchFilters.tsx";
 import SearchCard from "./SearchCard.tsx";
 import SearchBar from "../common/SearchBar.tsx";
-import { ItemFilter } from "../../store/item.store.ts";
-
-interface Props {}
+import { ItemFilter, ItemFilterKey, updateFilters } from "../../store/item.store.ts";
+import { useLocation } from "react-router-dom";
 
 interface State {
   mobileFilterOpen: boolean;
 }
 
-const Search: React.FC<Props> = () => {
+const Search: React.FC = () => {
+  const dispatch = useDispatch();
+  const location = useLocation();
   const [state, setState] = useState<State>({
     mobileFilterOpen: false,
   });
@@ -32,6 +33,43 @@ const Search: React.FC<Props> = () => {
   const filters = useSelector(
     (reduxState: RootState) => reduxState.items.filters,
   );
+
+  React.useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const gender = queryParams.get("gender");
+    const type = queryParams.get("type");
+
+    if (!gender && !type) {
+      return;
+    }
+
+    const updatedFilters = structuredClone(filters);
+    let hasChanges = false;
+
+    updatedFilters.forEach((filter: ItemFilter) => {
+      let nextSelectedValues: string[] = [];
+
+      if (filter.key === ItemFilterKey.Gender && gender) {
+        nextSelectedValues = [gender];
+      }
+
+      if (filter.key === ItemFilterKey.Type && type) {
+        nextSelectedValues = [type];
+      }
+
+      if (
+        filter.selectedValues.length !== nextSelectedValues.length ||
+        filter.selectedValues.some((value, index) => value !== nextSelectedValues[index])
+      ) {
+        filter.selectedValues = nextSelectedValues;
+        hasChanges = true;
+      }
+    });
+
+    if (hasChanges) {
+      dispatch(updateFilters({ filters: updatedFilters }));
+    }
+  }, [dispatch, filters, location.search]);
 
   const filterAndSortText = () => {
     let text = "Filter";

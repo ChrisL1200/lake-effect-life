@@ -18,13 +18,14 @@ export type InventoryMovementType =
 interface InventoryMovementAttributes {
   id: string;
   itemId: string;
+  orderId?: string | null;
   movementType: InventoryMovementType;
   quantityDelta: number;
   note?: string | null;
 }
 
 interface InventoryMovementCreationAttributes
-  extends Optional<InventoryMovementAttributes, "id" | "note"> {}
+  extends Optional<InventoryMovementAttributes, "id" | "orderId" | "note"> {}
 
 class InventoryMovement
   extends Model<InventoryMovementAttributes, InventoryMovementCreationAttributes>
@@ -32,6 +33,7 @@ class InventoryMovement
 {
   public id!: string;
   public itemId!: string;
+  public orderId?: string | null;
   public movementType!: InventoryMovementType;
   public quantityDelta!: number;
   public note?: string | null;
@@ -52,6 +54,16 @@ InventoryMovement.init(
         key: "id",
       },
       onDelete: "CASCADE",
+      onUpdate: "CASCADE",
+    },
+    orderId: {
+      type: DataTypes.UUID,
+      allowNull: true,
+      references: {
+        model: "orders",
+        key: "id",
+      },
+      onDelete: "SET NULL",
       onUpdate: "CASCADE",
     },
     movementType: {
@@ -83,7 +95,7 @@ InventoryMovement.init(
     modelName: "InventoryMovement",
     tableName: "inventory_movements",
     timestamps: true,
-    indexes: [{ fields: ["itemId"] }, { fields: ["movementType"] }],
+    indexes: [{ fields: ["itemId"] }, { fields: ["orderId"] }, { fields: ["movementType"] }],
   },
 );
 

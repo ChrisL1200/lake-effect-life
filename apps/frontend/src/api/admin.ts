@@ -21,6 +21,57 @@ export interface AdminInventoryListResponse {
   totalPages: number;
 }
 
+export interface AdminInventoryTransaction {
+  id: string;
+  itemId: string;
+  orderId?: string | null;
+  orderNumber?: string | null;
+  orderStatus?: string | null;
+  customerId?: string | null;
+  customerEmail?: string | null;
+  customerFirstName?: string | null;
+  customerLastName?: string | null;
+  customerIsGuest?: boolean | null;
+  shippingLine1?: string | null;
+  shippingCity?: string | null;
+  shippingState?: string | null;
+  shippingPostalCode?: string | null;
+  shippingCountry?: string | null;
+  shipmentStatus?: string | null;
+  trackingNumber?: string | null;
+  shippedAt?: string | null;
+  deliveredAt?: string | null;
+  movementType: string;
+  quantityDelta: number;
+  note?: string | null;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface AdminInventoryTransactionListParams {
+  page: number;
+  limit: number;
+  search?: string;
+  sortBy?:
+    | "id"
+    | "itemId"
+    | "movementType"
+    | "quantityDelta"
+    | "createdAt"
+    | "customerEmail"
+    | "orderNumber"
+    | "shipmentStatus";
+  sortDirection?: "asc" | "desc";
+}
+
+export interface AdminInventoryTransactionListResponse {
+  data: AdminInventoryTransaction[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+}
+
 export type AdminLookupCategory = "types" | "genders" | "colors" | "sizes";
 
 export interface AdminInventoryLookups {
@@ -89,6 +140,23 @@ const getInventory = async (
       },
     },
   );
+  return response.data;
+};
+
+const getInventoryTransactions = async (
+  token: string,
+  params: AdminInventoryTransactionListParams,
+): Promise<AdminInventoryTransactionListResponse> => {
+  const response = await axios.get(`${API_BASE_URL}/admin/inventory/transactions`, {
+    ...getAuthHeaders(token),
+    params: {
+      page: params.page,
+      limit: params.limit,
+      search: params.search || undefined,
+      sortBy: params.sortBy || "createdAt",
+      sortDirection: params.sortDirection || "desc",
+    },
+  });
   return response.data;
 };
 
@@ -179,6 +247,7 @@ export default {
   clearStoredToken,
   login,
   getInventory,
+  getInventoryTransactions,
   getInventoryById,
   getInventoryLookups,
   createInventoryLookupValue,

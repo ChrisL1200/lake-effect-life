@@ -14,6 +14,8 @@ import Login from "../login/Login.tsx";
 import Admin from "../admin/Admin.tsx";
 import AdminInventoryEditor from "../admin/AdminInventoryEditor.tsx";
 import GroupedItem from "../../models/groupedItem.model.ts";
+import About from "../about/About.tsx";
+import AdminTransactions from "../admin/AdminTransactions.tsx";
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -30,7 +32,7 @@ const App: React.FC = () => {
     <>
       <Router>
         <Header></Header>
-        <div className="container mx-auto flex items-center justify-between p-4">
+        <div className="container mx-auto w-full p-4">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
@@ -38,7 +40,9 @@ const App: React.FC = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/about" element={<About />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/transactions" element={<AdminTransactions />} />
             <Route path="/admin/new" element={<AdminInventoryEditor />} />
             <Route path="/admin/:id/edit" element={<AdminInventoryEditor />} />
           </Routes>

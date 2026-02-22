@@ -103,6 +103,10 @@ export const setItemOnHandInventory = async (
   }
 
   await level.update({ onHand: sanitizedTarget }, { transaction });
+  await Item.update(
+    { inventory: sanitizedTarget },
+    { where: { id: itemId }, transaction },
+  );
   await InventoryMovement.create(
     {
       itemId,

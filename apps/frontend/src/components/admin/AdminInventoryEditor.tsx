@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Carousel } from "@material-tailwind/react";
 import api from "../../api";
 import GroupedItem from "../../models/groupedItem.model";
+import AdminShell from "./AdminShell";
 
 interface LookupOptions {
   types: string[];
@@ -447,21 +448,17 @@ const AdminInventoryEditor: React.FC = () => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-[1300px] px-4 pb-10">
-      <nav className="mb-2 text-sm text-gray-600">
-        <Link className="text-blue-700 underline hover:text-blue-900" to={backHref}>
-          Inventory Search
-        </Link>
-        <span className="mx-2">/</span>
-        <span>{isCreate ? "Create Item" : "Edit Item"}</span>
-      </nav>
-
-      <div className="mb-4 flex items-center justify-between">
-        <h1 className="text-3xl font-bold">{isCreate ? "Create Inventory Item" : `Edit ${decodedId}`}</h1>
+    <AdminShell
+      title={isCreate ? "Create Inventory Item" : `Edit ${decodedId}`}
+      actions={
         <button className="rounded border px-3 py-2 text-sm" onClick={() => navigate(backHref)} type="button">
           Back To List
         </button>
-      </div>
+      }
+    >
+      <p className="mb-2 text-sm text-gray-600">
+        {isCreate ? "Create Item" : "Edit Item"}
+      </p>
 
       {message && <p className="mb-2 text-sm text-green-700">{message}</p>}
       {error && <p className="mb-2 text-sm text-red-600">{error}</p>}
@@ -710,7 +707,7 @@ const AdminInventoryEditor: React.FC = () => {
           </button>
         </div>
       </section>
-    </div>
+    </AdminShell>
   );
 };
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
-import api from "../../api";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import { useSearchParams } from "react-router-dom";
+import adminApi, { AdminInventoryTransaction } from "../../api/admin";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
@@ -15,8 +14,25 @@ const parsePositiveInt = (value: string | null, fallback: number) => {
 
 const parseSortBy = (
   value: string | null,
-): "id" | "type" | "gender" | "createdAt" => {
-  if (value === "id" || value === "type" || value === "gender" || value === "createdAt") {
+):
+  | "id"
+  | "itemId"
+  | "movementType"
+  | "quantityDelta"
+  | "createdAt"
+  | "customerEmail"
+  | "orderNumber"
+  | "shipmentStatus" => {
+  if (
+    value === "id" ||
+    value === "itemId" ||
+    value === "movementType" ||
+    value === "quantityDelta" ||
+    value === "createdAt" ||
+    value === "customerEmail" ||
+    value === "orderNumber" ||
+    value === "shipmentStatus"
+  ) {
     return value;
   }
   return "createdAt";
@@ -26,26 +42,35 @@ const parseSortDirection = (value: string | null): "asc" | "desc" => {
   return value === "asc" ? "asc" : "desc";
 };
 
-const Admin: React.FC = () => {
+const AdminTransactions: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialPage = parsePositiveInt(searchParams.get("page"), 1);
   const initialLimit = parsePositiveInt(searchParams.get("limit"), 25);
   const initialSearch = (searchParams.get("search") || "").trim();
   const initialSortBy = parseSortBy(searchParams.get("sortBy"));
   const initialSortDirection = parseSortDirection(searchParams.get("sortDirection"));
-  const token = api.admin.getStoredToken();
-  const [rows, setRows] = useState<any[]>([]);
+  const token = adminApi.getStoredToken();
+
+  const [rows, setRows] = useState<AdminInventoryTransaction[]>([]);
   const [page, setPage] = useState(initialPage);
   const [limit, setLimit] = useState(initialLimit);
   const [totalPages, setTotalPages] = useState(1);
   const [total, setTotal] = useState(0);
   const [searchInput, setSearchInput] = useState(initialSearch);
   const [search, setSearch] = useState(initialSearch);
-  const [sortBy, setSortBy] = useState<"id" | "type" | "gender" | "createdAt">(initialSortBy);
+  const [sortBy, setSortBy] = useState<
+    | "id"
+    | "itemId"
+    | "movementType"
+    | "quantityDelta"
+    | "createdAt"
+    | "customerEmail"
+    | "orderNumber"
+    | "shipmentStatus"
+  >(initialSortBy);
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">(initialSortDirection);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -68,11 +93,11 @@ const Admin: React.FC = () => {
     setSearchParams(nextParams, { replace: true });
   }, [page, limit, search, sortBy, sortDirection, setSearchParams]);
 
-  const loadInventory = async (authToken: string) => {
+  const loadTransactions = async (authToken: string) => {
     setIsLoading(true);
     setError("");
     try {
-      const response = await api.admin.getInventory(authToken, {
+      const response = await adminApi.getInventoryTransactions(authToken, {
         page,
         limit,
         search,
@@ -87,33 +112,27 @@ const Admin: React.FC = () => {
         setError("Admin auth is enabled on backend. Disable it for dev access.");
         return;
       }
-      setError(err?.response?.data?.message || "Failed to load inventory");
+      setError(err?.response?.data?.message || "Failed to load transactions");
     } finally {
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    loadInventory(token);
+    loadTransactions(token);
   }, [token, page, limit, search, sortBy, sortDirection]);
 
-  const handleDelete = async (id: string) => {
-    setError("");
-    setMessage("");
-    try {
-      await api.admin.deleteInventory(token, id);
-      setMessage(`Deleted ${id}`);
-      await loadInventory(token);
-    } catch (err: any) {
-      if (err?.response?.status === 401) {
-        setError("Admin auth is enabled on backend. Disable it for dev access.");
-        return;
-      }
-      setError(err?.response?.data?.message || "Delete failed");
-    }
-  };
-
-  const onSortClick = (nextSortBy: "id" | "type" | "gender" | "createdAt") => {
+  const onSortClick = (
+    nextSortBy:
+      | "id"
+      | "itemId"
+      | "movementType"
+      | "quantityDelta"
+      | "createdAt"
+      | "customerEmail"
+      | "orderNumber"
+      | "shipmentStatus",
+  ) => {
     if (sortBy === nextSortBy) {
       setSortDirection((prev) => (prev === "asc" ? "desc" : "asc"));
       return;
@@ -122,7 +141,17 @@ const Admin: React.FC = () => {
     setSortDirection("asc");
   };
 
-  const sortIndicator = (key: "id" | "type" | "gender" | "createdAt") => {
+  const sortIndicator = (
+    key:
+      | "id"
+      | "itemId"
+      | "movementType"
+      | "quantityDelta"
+      | "createdAt"
+      | "customerEmail"
+      | "orderNumber"
+      | "shipmentStatus",
+  ) => {
     if (sortBy !== key) {
       return <ArrowDropDownIcon className="opacity-30" />;
     }
@@ -130,54 +159,41 @@ const Admin: React.FC = () => {
     return sortDirection === "asc" ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />;
   };
 
-  const listQueryString = useMemo(() => {
-    const params = new URLSearchParams();
-    params.set("page", String(page));
-    params.set("limit", String(limit));
-    if (search) {
-      params.set("search", search);
-    }
-    params.set("sortBy", sortBy);
-    params.set("sortDirection", sortDirection);
-    return params.toString();
-  }, [page, limit, search, sortBy, sortDirection]);
+  const movementTypeLabel = useMemo(
+    () => ({
+      ADMIN_SET: "Admin Set",
+      RESERVE: "Reserve",
+      RELEASE: "Release",
+      SALE: "Sale",
+      ADJUSTMENT: "Adjustment",
+    }),
+    [],
+  );
 
   return (
-    <AdminShell
-      title="Inventory Admin"
-      actions={
-        <Link
-          className="rounded border px-3 py-2 text-sm font-semibold"
-          to="/admin/new"
-        >
-          Create Inventory
-        </Link>
-      }
-    >
-
-      {message && <p className="mb-2 text-sm text-green-700">{message}</p>}
+    <AdminShell title="Inventory Transactions">
       {error && <p className="mb-2 text-sm text-red-600">{error}</p>}
 
       <section className="rounded-xl border bg-white shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b px-4 py-3">
           <div className="flex items-center gap-2">
-            <label className="text-sm text-gray-700" htmlFor="admin-search">
+            <label className="text-sm text-gray-700" htmlFor="admin-transaction-search">
               Search
             </label>
             <input
-              id="admin-search"
+              id="admin-transaction-search"
               className="w-72 rounded border p-2 text-sm"
-              placeholder="id, type, gender"
+              placeholder="id, itemId, movement type, note"
               value={searchInput}
               onChange={(event) => setSearchInput(event.target.value)}
             />
           </div>
           <div className="flex items-center gap-2">
-            <label className="text-sm text-gray-700" htmlFor="page-size">
+            <label className="text-sm text-gray-700" htmlFor="transaction-page-size">
               Page size
             </label>
             <select
-              id="page-size"
+              id="transaction-page-size"
               className="rounded border p-2 text-sm"
               value={limit}
               onChange={(event) => {
@@ -195,7 +211,7 @@ const Admin: React.FC = () => {
         </div>
 
         <div className="overflow-auto">
-          <table className="w-full min-w-[900px] text-left text-sm">
+          <table className="w-full min-w-[1000px] text-left text-sm">
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-4 py-3 font-semibold">
@@ -210,21 +226,62 @@ const Admin: React.FC = () => {
                 <th className="px-4 py-3 font-semibold">
                   <button
                     className="inline-flex items-center font-semibold"
-                    onClick={() => onSortClick("type")}
+                    onClick={() => onSortClick("itemId")}
                     type="button"
                   >
-                    Type {sortIndicator("type")}
+                    Item ID {sortIndicator("itemId")}
                   </button>
                 </th>
                 <th className="px-4 py-3 font-semibold">
                   <button
                     className="inline-flex items-center font-semibold"
-                    onClick={() => onSortClick("gender")}
+                    onClick={() => onSortClick("orderNumber")}
                     type="button"
                   >
-                    Gender {sortIndicator("gender")}
+                    Order # {sortIndicator("orderNumber")}
                   </button>
                 </th>
+                <th className="px-4 py-3 font-semibold">
+                  <button
+                    className="inline-flex items-center font-semibold"
+                    onClick={() => onSortClick("customerEmail")}
+                    type="button"
+                  >
+                    Customer {sortIndicator("customerEmail")}
+                  </button>
+                </th>
+                <th className="px-4 py-3 font-semibold">
+                  Shipping
+                </th>
+                <th className="px-4 py-3 font-semibold">Shipped</th>
+                <th className="px-4 py-3 font-semibold">
+                  <button
+                    className="inline-flex items-center font-semibold"
+                    onClick={() => onSortClick("shipmentStatus")}
+                    type="button"
+                  >
+                    Shipment {sortIndicator("shipmentStatus")}
+                  </button>
+                </th>
+                <th className="px-4 py-3 font-semibold">
+                  <button
+                    className="inline-flex items-center font-semibold"
+                    onClick={() => onSortClick("movementType")}
+                    type="button"
+                  >
+                    Type {sortIndicator("movementType")}
+                  </button>
+                </th>
+                <th className="px-4 py-3 font-semibold">
+                  <button
+                    className="inline-flex items-center font-semibold"
+                    onClick={() => onSortClick("quantityDelta")}
+                    type="button"
+                  >
+                    Delta {sortIndicator("quantityDelta")}
+                  </button>
+                </th>
+                <th className="px-4 py-3 font-semibold">Note</th>
                 <th className="px-4 py-3 font-semibold">
                   <button
                     className="inline-flex items-center font-semibold"
@@ -234,39 +291,68 @@ const Admin: React.FC = () => {
                     Created {sortIndicator("createdAt")}
                   </button>
                 </th>
-                <th className="px-4 py-3 font-semibold">Colors</th>
-                <th className="px-4 py-3 font-semibold">Actions</th>
               </tr>
             </thead>
             <tbody>
-              {rows.map((item: any) => (
-                <tr key={item.id} className="border-t">
+              {rows.map((movement) => (
+                <tr key={movement.id} className="border-t">
+                  <td className="px-4 py-3 font-medium">{movement.id}</td>
+                  <td className="px-4 py-3">{movement.itemId}</td>
+                  <td className="px-4 py-3">{movement.orderNumber || "-"}</td>
+                  <td className="px-4 py-3">
+                    <div>{movement.customerEmail || "-"}</div>
+                    {(movement.customerFirstName || movement.customerLastName) && (
+                      <div className="text-xs text-gray-500">
+                        {movement.customerFirstName || ""} {movement.customerLastName || ""}
+                        {movement.customerIsGuest ? " (Guest)" : ""}
+                      </div>
+                    )}
+                  </td>
+                  <td className="px-4 py-3">
+                    {movement.shippingLine1 ? (
+                      <div>
+                        <div>{movement.shippingLine1}</div>
+                        <div className="text-xs text-gray-500">
+                          {movement.shippingCity}, {movement.shippingState}{" "}
+                          {movement.shippingPostalCode}
+                        </div>
+                      </div>
+                    ) : (
+                      "-"
+                    )}
+                  </td>
                   <td className="px-4 py-3 font-medium">
-                    <Link
-                      className="text-blue-700 underline hover:text-blue-900"
-                      to={`/admin/${encodeURIComponent(item.id)}/edit?${listQueryString}`}
-                    >
-                      {item.id}
-                    </Link>
+                    {movement.shipmentStatus === "SHIPPED" ||
+                    movement.shipmentStatus === "DELIVERED" ? (
+                      <span className="text-green-700">Yes</span>
+                    ) : (
+                      <span className="text-gray-500">No</span>
+                    )}
                   </td>
-                  <td className="px-4 py-3">{item.type}</td>
-                  <td className="px-4 py-3">{item.gender}</td>
                   <td className="px-4 py-3">
-                    {item.createdAt ? new Date(item.createdAt).toLocaleDateString() : "-"}
+                    <div>{movement.shipmentStatus || "Not shipped"}</div>
+                    {movement.trackingNumber && (
+                      <div className="text-xs text-gray-500">{movement.trackingNumber}</div>
+                    )}
                   </td>
-                  <td className="px-4 py-3">{item.itemColors?.length || 0}</td>
                   <td className="px-4 py-3">
-                    <div className="flex gap-2">
-                      <button
-                        className="rounded border border-red-500 p-1 text-red-600"
-                        onClick={() => handleDelete(item.id)}
-                        type="button"
-                        aria-label={`Delete ${item.id}`}
-                        title="Delete"
-                      >
-                        <DeleteOutlineIcon fontSize="small" />
-                      </button>
-                    </div>
+                    {movementTypeLabel[
+                      movement.movementType as keyof typeof movementTypeLabel
+                    ] || movement.movementType}
+                  </td>
+                  <td
+                    className={`px-4 py-3 font-semibold ${
+                      movement.quantityDelta >= 0 ? "text-green-700" : "text-red-700"
+                    }`}
+                  >
+                    {movement.quantityDelta >= 0 ? "+" : ""}
+                    {movement.quantityDelta}
+                  </td>
+                  <td className="px-4 py-3">{movement.note || "-"}</td>
+                  <td className="px-4 py-3">
+                    {movement.createdAt
+                      ? new Date(movement.createdAt).toLocaleString()
+                      : "-"}
                   </td>
                 </tr>
               ))}
@@ -274,9 +360,9 @@ const Admin: React.FC = () => {
           </table>
         </div>
 
-        {isLoading && <p className="px-4 py-3 text-sm text-gray-500">Loading inventory...</p>}
+        {isLoading && <p className="px-4 py-3 text-sm text-gray-500">Loading transactions...</p>}
         {!isLoading && rows.length === 0 && (
-          <p className="px-4 py-3 text-sm text-gray-500">No inventory records found.</p>
+          <p className="px-4 py-3 text-sm text-gray-500">No transaction records found.</p>
         )}
 
         <div className="flex items-center justify-between border-t px-4 py-3">
@@ -311,4 +397,4 @@ const Admin: React.FC = () => {
   );
 };
 
-export default Admin;
+export default AdminTransactions;
