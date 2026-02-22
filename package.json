@@ -1,9 +1,31 @@
 {
+  "name": "lake-effect-life",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "infra/*"
+  ],
+  "scripts": {
+    "prepare": "echo 'Husky prepare step (manual setup)'",
+    "db:up": "docker start lel-postgres || docker compose up -d db",
+    "db:down": "docker compose down",
+    "db:migrate-lookups": "npm run db:migrate-lookups -w @lake-effect-life/backend",
+    "db:migrate-inventory-model": "npm run db:migrate-inventory-model -w @lake-effect-life/backend",
+    "dev": "npm run db:up && concurrently -n backend,frontend -c cyan,magenta \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "npm run dev -w @lake-effect-life/frontend",
+    "dev:backend": "npm run dev -w @lake-effect-life/backend",
+    "build:frontend": "npm run build -w @lake-effect-life/frontend",
+    "build:backend": "npm run build -w @lake-effect-life/backend",
+    "typecheck": "npm run typecheck -ws",
+    "lint": "npm run lint -ws",
+    "cdk:synth": "npm run cdk:synth -w @lake-effect-life/infra",
+    "cdk:bootstrap": "npm run cdk:bootstrap -w @lake-effect-life/infra",
+    "cdk:deploy": "npm run cdk:deploy -w @lake-effect-life/infra",
+    "cdk:destroy": "npm run cdk:destroy -w @lake-effect-life/infra"
+  },
   "devDependencies": {
+    "concurrently": "^9.2.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0"
-  },
-  "scripts": {
-    "prepare": "echo 'Husky prepare step (manual setup)'"
   }
 }

@@ -1,4 +1,15 @@
-# Logs
+node_modules
+
+# build output
+cdk.out
+coverage
+
+# env files
+.env
+.env.*
+!.env.example
+
+# existing ignores
 logs
 *.log
 npm-debug.log*
@@ -7,7 +18,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
 dist
 dist-ssr
 *.local
